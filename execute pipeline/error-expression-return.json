@@ -1,0 +1,281 @@
+{
+    "PipelineName": "p_copy_data",
+    "PipelineRunId": "3769c07b-b70e-4e6c-9f84-be2d9a4d6e59",
+    "JobId": "3769c07b-b70e-4e6c-9f84-be2d9a4d6e59",
+    "ActivityRunId": "d6f2551a-9f0e-42af-8fa9-4fea33e7a713",
+    "ExecutionStartTime": "2024-05-30T04:55:09.60268Z",
+    "ExecutionEndTime": "2024-05-30T04:55:48.1588065Z",
+    "Status": "Succeeded",
+    "Error": null,
+    "Output": {
+        "pipelineName": "sample_copy_data",
+        "pipelineRunId": "36bea3d5-8337-424a-bcf8-e18291e3d277",
+        "pipelineReturnValue": {
+            "result": [
+                {
+                    "PipelineName": "sample_copy_data",
+                    "PipelineRunId": "36bea3d5-8337-424a-bcf8-e18291e3d277",
+                    "JobId": "36bea3d5-8337-424a-bcf8-e18291e3d277",
+                    "ActivityRunId": "664963e0-9dba-48a6-8fc5-774163d31696",
+                    "ExecutionStartTime": "2024-05-30T04:55:11.4004144Z",
+                    "ExecutionEndTime": "2024-05-30T04:55:25.2854065Z",
+                    "Status": "Succeeded",
+                    "Error": null,
+                    "Output": {
+                        "dataRead": 476,
+                        "dataWritten": 91,
+                        "filesWritten": 1,
+                        "sourcePeakConnections": 1,
+                        "sinkPeakConnections": 1,
+                        "rowsRead": 1,
+                        "rowsCopied": 1,
+                        "copyDuration": 12,
+                        "throughput": 0.119,
+                        "errors": [],
+                        "effectiveIntegrationRuntime": "AutoResolveIntegrationRuntime (Southeast Asia)",
+                        "usedDataIntegrationUnits": 4,
+                        "billingReference": {
+                            "activityType": "DataMovement",
+                            "billableDuration": [
+                                {
+                                    "meterType": "AzureIR",
+                                    "duration": 0.06666666666666667,
+                                    "unit": "DIUHours"
+                                }
+                            ],
+                            "totalBillableDuration": [
+                                {
+                                    "meterType": "AzureIR",
+                                    "duration": 0.06666666666666667,
+                                    "unit": "DIUHours"
+                                }
+                            ]
+                        },
+                        "usedParallelCopies": 1,
+                        "executionDetails": [
+                            {
+                                "source": {
+                                    "type": "CosmosDb"
+                                },
+                                "sink": {
+                                    "type": "AzureBlobStorage",
+                                    "region": "Southeast Asia"
+                                },
+                                "status": "Succeeded",
+                                "start": "2024-05-30T04:55:11.9195148Z",
+                                "duration": 12,
+                                "usedDataIntegrationUnits": 4,
+                                "usedParallelCopies": 1,
+                                "profile": {
+                                    "queue": {
+                                        "status": "Completed",
+                                        "duration": 7
+                                    },
+                                    "transfer": {
+                                        "status": "Completed",
+                                        "duration": 4,
+                                        "details": {
+                                            "readingFromSource": {
+                                                "type": "CosmosDbSqlApi",
+                                                "workingDuration": 0,
+                                                "timeToFirstByte": 0
+                                            },
+                                            "writingToSink": {
+                                                "type": "AzureBlobStorage",
+                                                "workingDuration": 0
+                                            }
+                                        }
+                                    }
+                                },
+                                "detailedDurations": {
+                                    "queuingDuration": 7,
+                                    "timeToFirstByte": 0,
+                                    "transferDuration": 4
+                                }
+                            }
+                        ],
+                        "dataConsistencyVerification": {
+                            "VerificationResult": "NotVerified"
+                        },
+                        "durationInQueue": {
+                            "integrationRuntimeQueue": 0
+                        }
+                    },
+                    "ExecutionDetails": {
+                        "integrationRuntime": [
+                            {
+                                "name": "AutoResolveIntegrationRuntime",
+                                "type": "Managed",
+                                "location": "Southeast Asia",
+                                "nodes": null
+                            }
+                        ]
+                    },
+                    "StatusCode": 200,
+                    "ExecutionStatus": "Pass",
+                    "Duration": "00:00:13.8849921",
+                    "RecoveryStatus": "None",
+                    "ActivityType": "Copy"
+                },
+                {
+                    "PipelineName": "sample_copy_data",
+                    "PipelineRunId": "36bea3d5-8337-424a-bcf8-e18291e3d277",
+                    "JobId": "36bea3d5-8337-424a-bcf8-e18291e3d277",
+                    "ActivityRunId": "86deca40-93fa-42ab-a7e9-51c75d34ed4a",
+                    "ExecutionStartTime": "2024-05-30T04:55:27.0840765Z",
+                    "ExecutionEndTime": "2024-05-30T04:55:30.2310437Z",
+                    "Status": "Failed",
+                    "Error": {
+                        "errorCode": "2400",
+                        "message": "Cannot create Sql Source. Please double check the connection string, stored procedure are set with correct format. Error: The value of the property 'Value' is invalid for the stored procedure parameter 'InsertedRecords'.",
+                        "failureType": "UserError",
+                        "target": "Stored procedure1",
+                        "details": []
+                    },
+                    "Output": {
+                        "effectiveIntegrationRuntime": "AutoResolveIntegrationRuntime (Southeast Asia)",
+                        "executionDuration": 1,
+                        "durationInQueue": {
+                            "integrationRuntimeQueue": 1
+                        },
+                        "billingReference": {
+                            "activityType": "ExternalActivity",
+                            "billableDuration": [
+                                {
+                                    "meterType": "AzureIR",
+                                    "duration": 0.016666666666666666,
+                                    "unit": "Hours"
+                                }
+                            ]
+                        }
+                    },
+                    "ExecutionDetails": {
+                        "integrationRuntime": [
+                            {
+                                "name": "AutoResolveIntegrationRuntime",
+                                "type": "Managed",
+                                "location": "Southeast Asia"
+                            }
+                        ]
+                    },
+                    "StatusCode": 400,
+                    "ExecutionStatus": "Fail",
+                    "Duration": "00:00:03.1469672",
+                    "RecoveryStatus": "None",
+                    "ActivityType": "SqlServerStoredProcedure"
+                },
+                {
+                    "PipelineName": "sample_copy_data",
+                    "PipelineRunId": "36bea3d5-8337-424a-bcf8-e18291e3d277",
+                    "JobId": "36bea3d5-8337-424a-bcf8-e18291e3d277",
+                    "ActivityRunId": "9c935365-1908-4c62-9a96-1e6237c2f1b4",
+                    "ExecutionStartTime": "2024-05-30T04:55:31.8715647Z",
+                    "ExecutionEndTime": "2024-05-30T04:55:44.9566887Z",
+                    "Status": "Succeeded",
+                    "Error": null,
+                    "Output": {
+                        "dataRead": 476,
+                        "dataWritten": 91,
+                        "filesWritten": 1,
+                        "sourcePeakConnections": 1,
+                        "sinkPeakConnections": 1,
+                        "rowsRead": 1,
+                        "rowsCopied": 1,
+                        "copyDuration": 11,
+                        "throughput": 0.159,
+                        "errors": [],
+                        "effectiveIntegrationRuntime": "AutoResolveIntegrationRuntime (Southeast Asia)",
+                        "usedDataIntegrationUnits": 4,
+                        "billingReference": {
+                            "activityType": "DataMovement",
+                            "billableDuration": [
+                                {
+                                    "meterType": "AzureIR",
+                                    "duration": 0.06666666666666667,
+                                    "unit": "DIUHours"
+                                }
+                            ],
+                            "totalBillableDuration": [
+                                {
+                                    "meterType": "AzureIR",
+                                    "duration": 0.06666666666666667,
+                                    "unit": "DIUHours"
+                                }
+                            ]
+                        },
+                        "usedParallelCopies": 1,
+                        "executionDetails": [
+                            {
+                                "source": {
+                                    "type": "CosmosDb"
+                                },
+                                "sink": {
+                                    "type": "AzureBlobStorage",
+                                    "region": "Southeast Asia"
+                                },
+                                "status": "Succeeded",
+                                "start": "2024-05-30T04:55:32.4861658Z",
+                                "duration": 11,
+                                "usedDataIntegrationUnits": 4,
+                                "usedParallelCopies": 1,
+                                "profile": {
+                                    "queue": {
+                                        "status": "Completed",
+                                        "duration": 6
+                                    },
+                                    "transfer": {
+                                        "status": "Completed",
+                                        "duration": 3,
+                                        "details": {
+                                            "readingFromSource": {
+                                                "type": "CosmosDbSqlApi",
+                                                "workingDuration": 0,
+                                                "timeToFirstByte": 0
+                                            },
+                                            "writingToSink": {
+                                                "type": "AzureBlobStorage",
+                                                "workingDuration": 0
+                                            }
+                                        }
+                                    }
+                                },
+                                "detailedDurations": {
+                                    "queuingDuration": 6,
+                                    "timeToFirstByte": 0,
+                                    "transferDuration": 3
+                                }
+                            }
+                        ],
+                        "dataConsistencyVerification": {
+                            "VerificationResult": "NotVerified"
+                        },
+                        "durationInQueue": {
+                            "integrationRuntimeQueue": 0
+                        }
+                    },
+                    "ExecutionDetails": {
+                        "integrationRuntime": [
+                            {
+                                "name": "AutoResolveIntegrationRuntime",
+                                "type": "Managed",
+                                "location": "Southeast Asia",
+                                "nodes": null
+                            }
+                        ]
+                    },
+                    "StatusCode": 200,
+                    "ExecutionStatus": "Pass",
+                    "Duration": "00:00:13.0851240",
+                    "RecoveryStatus": "None",
+                    "ActivityType": "Copy"
+                }
+            ]
+        }
+    },
+    "ExecutionDetails": null,
+    "StatusCode": 200,
+    "ExecutionStatus": "Pass",
+    "Duration": "00:00:38.5561265",
+    "RecoveryStatus": "None",
+    "ActivityType": "ExecutePipeline"
+}
