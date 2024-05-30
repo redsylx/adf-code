@@ -1,0 +1,21 @@
+{
+    "PipelineName": "logging_test",
+    "PipelineRunId": "b14e1479-aa7e-495a-b034-1f1b25b37976",
+    "JobId": "b14e1479-aa7e-495a-b034-1f1b25b37976",
+    "ActivityRunId": "d849d5bf-4849-40cd-9a23-09411b1cd296",
+    "ExecutionStartTime": "2024-05-30T03:21:11.3442051Z",
+    "ExecutionEndTime": "2024-05-30T03:21:28.022654Z",
+    "Status": "Succeeded",
+    "Error": null,
+    "Output": {
+        "pipelineName": "LoggingPipeline",
+        "pipelineRunId": "21627fc7-17cb-4693-afd8-4b9fea65f7d7",
+        "pipelineReturnValue": {}
+    },
+    "ExecutionDetails": null,
+    "StatusCode": 200,
+    "ExecutionStatus": "Pass",
+    "Duration": "00:00:16.6784489",
+    "RecoveryStatus": "None",
+    "ActivityType": "ExecutePipeline"
+}

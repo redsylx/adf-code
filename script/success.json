@@ -1,0 +1,48 @@
+{
+    "PipelineName": "LoggingPipeline",
+    "PipelineRunId": "d2c7ac66-b3da-4cf3-83ec-f0d659c0cb80",
+    "JobId": "d2c7ac66-b3da-4cf3-83ec-f0d659c0cb80",
+    "ActivityRunId": "fc2e037f-a20f-4de9-ba46-15efc732e8ea",
+    "ExecutionStartTime": "2024-05-30T02:52:35.6085755Z",
+    "ExecutionEndTime": "2024-05-30T02:52:41.1991308Z",
+    "Status": "Succeeded",
+    "Error": null,
+    "Output": {
+        "resultSetCount": 0,
+        "recordsAffected": 1,
+        "resultSets": [],
+        "outputParameters": {},
+        "outputLogs": "",
+        "outputLogsLocation": "",
+        "outputTruncated": false,
+        "effectiveIntegrationRuntime": "AutoResolveIntegrationRuntime (Southeast Asia)",
+        "executionDuration": 1,
+        "durationInQueue": {
+            "integrationRuntimeQueue": 0
+        },
+        "billingReference": {
+            "activityType": "PipelineActivity",
+            "billableDuration": [
+                {
+                    "meterType": "AzureIR",
+                    "duration": 0.016666666666666666,
+                    "unit": "Hours"
+                }
+            ]
+        }
+    },
+    "ExecutionDetails": {
+        "integrationRuntime": [
+            {
+                "name": "AutoResolveIntegrationRuntime",
+                "type": "Managed",
+                "location": "Southeast Asia"
+            }
+        ]
+    },
+    "StatusCode": 200,
+    "ExecutionStatus": "Pass",
+    "Duration": "00:00:05.5905553",
+    "RecoveryStatus": "None",
+    "ActivityType": "Script"
+}

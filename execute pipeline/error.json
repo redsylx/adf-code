@@ -1,0 +1,93 @@
+{
+    "dataRead": 0,
+    "dataWritten": 0,
+    "filesWritten": 0,
+    "sourcePeakConnections": 1,
+    "sinkPeakConnections": 1,
+    "rowsRead": 0,
+    "rowsCopied": 0,
+    "copyDuration": 11,
+    "throughput": 0,
+    "errors": [
+        {
+            "Code": 9074,
+            "Message": "ErrorCode=UserErrorTypeInSchemaTableNotSupported,'Type=Microsoft.DataTransfer.Common.Shared.HybridDeliveryException,Message=Failed to get the type from schema table. This could be caused by missing Sql Server System CLR Types.,Source=Microsoft.DataTransfer.ClientLibrary,''Type=System.InvalidCastException,Message=Unable to cast object of type 'System.DBNull' to type 'System.Type'.,Source=Microsoft.DataTransfer.ClientLibrary,'",
+            "EventType": 0,
+            "Category": 5,
+            "Data": {},
+            "MsgId": null,
+            "ExceptionType": null,
+            "Source": null,
+            "StackTrace": null,
+            "InnerEventInfos": []
+        }
+    ],
+    "effectiveIntegrationRuntime": "AutoResolveIntegrationRuntime (Southeast Asia)",
+    "usedDataIntegrationUnits": 4,
+    "billingReference": {
+        "activityType": "DataMovement",
+        "billableDuration": [
+            {
+                "meterType": "AzureIR",
+                "duration": 0.06666666666666667,
+                "unit": "DIUHours"
+            }
+        ],
+        "totalBillableDuration": [
+            {
+                "meterType": "AzureIR",
+                "duration": 0.06666666666666667,
+                "unit": "DIUHours"
+            }
+        ]
+    },
+    "usedParallelCopies": 1,
+    "executionDetails": [
+        {
+            "source": {
+                "type": "CosmosDb"
+            },
+            "sink": {
+                "type": "AzureBlobStorage",
+                "region": "Southeast Asia"
+            },
+            "status": "Failed",
+            "start": "2024-05-30T03:04:46.4443701Z",
+            "duration": 11,
+            "usedDataIntegrationUnits": 4,
+            "usedParallelCopies": 1,
+            "profile": {
+                "queue": {
+                    "status": "Completed",
+                    "duration": 6
+                },
+                "transfer": {
+                    "status": "Completed",
+                    "duration": 3,
+                    "details": {
+                        "readingFromSource": {
+                            "type": "CosmosDbSqlApi",
+                            "workingDuration": 0,
+                            "timeToFirstByte": 1
+                        },
+                        "writingToSink": {
+                            "type": "AzureBlobStorage",
+                            "workingDuration": 0
+                        }
+                    }
+                }
+            },
+            "detailedDurations": {
+                "queuingDuration": 6,
+                "timeToFirstByte": 1,
+                "transferDuration": 2
+            }
+        }
+    ],
+    "dataConsistencyVerification": {
+        "VerificationResult": "NotVerified"
+    },
+    "durationInQueue": {
+        "integrationRuntimeQueue": 0
+    }
+}

@@ -1,0 +1,47 @@
+{
+    "PipelineName": "LoggingPipeline",
+    "PipelineRunId": "49a018a3-a2d5-4bd3-bf34-d7bf7882e12c",
+    "JobId": "49a018a3-a2d5-4bd3-bf34-d7bf7882e12c",
+    "ActivityRunId": "5fa71fc1-98fe-46cf-839c-4733503da75f",
+    "ExecutionStartTime": "2024-05-30T03:08:58.497442Z",
+    "ExecutionEndTime": "2024-05-30T03:09:04.601888Z",
+    "Status": "Failed",
+    "Error": {
+        "errorCode": "2011",
+        "message": "String or binary data would be truncated.\r\nThe statement has been terminated.",
+        "failureType": "UserError",
+        "target": "f-script_copy1",
+        "details": []
+    },
+    "Output": {
+        "effectiveIntegrationRuntime": "AutoResolveIntegrationRuntime (Southeast Asia)",
+        "executionDuration": 1,
+        "durationInQueue": {
+            "integrationRuntimeQueue": 0
+        },
+        "billingReference": {
+            "activityType": "PipelineActivity",
+            "billableDuration": [
+                {
+                    "meterType": "AzureIR",
+                    "duration": 0.016666666666666666,
+                    "unit": "Hours"
+                }
+            ]
+        }
+    },
+    "ExecutionDetails": {
+        "integrationRuntime": [
+            {
+                "name": "AutoResolveIntegrationRuntime",
+                "type": "Managed",
+                "location": "Southeast Asia"
+            }
+        ]
+    },
+    "StatusCode": 400,
+    "ExecutionStatus": "Fail",
+    "Duration": "00:00:06.1044460",
+    "RecoveryStatus": "None",
+    "ActivityType": "Script"
+}

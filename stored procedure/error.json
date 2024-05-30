@@ -1,0 +1,47 @@
+{
+    "PipelineName": "sample_copy_data",
+    "PipelineRunId": "3f4576b9-0586-4fea-a760-55d77d626230",
+    "JobId": "3f4576b9-0586-4fea-a760-55d77d626230",
+    "ActivityRunId": "50ab8ee6-77b7-4e13-a2f9-c2bef90cc3d3",
+    "ExecutionStartTime": "2024-05-30T03:37:56.8816717Z",
+    "ExecutionEndTime": "2024-05-30T03:37:59.6127628Z",
+    "Status": "Failed",
+    "Error": {
+        "errorCode": "2400",
+        "message": "Cannot create Sql Source. Please double check the connection string, stored procedure are set with correct format. Error: The value of the property 'Value' is invalid for the stored procedure parameter 'InsertedRecords'.",
+        "failureType": "UserError",
+        "target": "Stored procedure1",
+        "details": []
+    },
+    "Output": {
+        "effectiveIntegrationRuntime": "AutoResolveIntegrationRuntime (Southeast Asia)",
+        "executionDuration": 0,
+        "durationInQueue": {
+            "integrationRuntimeQueue": 0
+        },
+        "billingReference": {
+            "activityType": "ExternalActivity",
+            "billableDuration": [
+                {
+                    "meterType": "AzureIR",
+                    "duration": 0.016666666666666666,
+                    "unit": "Hours"
+                }
+            ]
+        }
+    },
+    "ExecutionDetails": {
+        "integrationRuntime": [
+            {
+                "name": "AutoResolveIntegrationRuntime",
+                "type": "Managed",
+                "location": "Southeast Asia"
+            }
+        ]
+    },
+    "StatusCode": 400,
+    "ExecutionStatus": "Fail",
+    "Duration": "00:00:02.7310911",
+    "RecoveryStatus": "None",
+    "ActivityType": "SqlServerStoredProcedure"
+}

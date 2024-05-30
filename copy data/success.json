@@ -1,0 +1,80 @@
+{
+	"dataRead": 476,
+	"dataWritten": 91,
+	"filesWritten": 1,
+	"sourcePeakConnections": 1,
+	"sinkPeakConnections": 1,
+	"rowsRead": 1,
+	"rowsCopied": 1,
+	"copyDuration": 12,
+	"throughput": 0.159,
+	"errors": [],
+	"effectiveIntegrationRuntime": "AutoResolveIntegrationRuntime (Southeast Asia)",
+	"usedDataIntegrationUnits": 4,
+	"billingReference": {
+		"activityType": "DataMovement",
+		"billableDuration": [
+			{
+				"meterType": "AzureIR",
+				"duration": 0.06666666666666667,
+				"unit": "DIUHours"
+			}
+		],
+		"totalBillableDuration": [
+			{
+				"meterType": "AzureIR",
+				"duration": 0.06666666666666667,
+				"unit": "DIUHours"
+			}
+		]
+	},
+	"usedParallelCopies": 1,
+	"executionDetails": [
+		{
+			"source": {
+				"type": "CosmosDb"
+			},
+			"sink": {
+				"type": "AzureBlobStorage",
+				"region": "Southeast Asia"
+			},
+			"status": "Succeeded",
+			"start": "2024-05-30T02:59:48.4615651Z",
+			"duration": 12,
+			"usedDataIntegrationUnits": 4,
+			"usedParallelCopies": 1,
+			"profile": {
+				"queue": {
+					"status": "Completed",
+					"duration": 7
+				},
+				"transfer": {
+					"status": "Completed",
+					"duration": 3,
+					"details": {
+						"readingFromSource": {
+							"type": "CosmosDbSqlApi",
+							"workingDuration": 0,
+							"timeToFirstByte": 0
+						},
+						"writingToSink": {
+							"type": "AzureBlobStorage",
+							"workingDuration": 0
+						}
+					}
+				}
+			},
+			"detailedDurations": {
+				"queuingDuration": 7,
+				"timeToFirstByte": 0,
+				"transferDuration": 3
+			}
+		}
+	],
+	"dataConsistencyVerification": {
+		"VerificationResult": "NotVerified"
+	},
+	"durationInQueue": {
+		"integrationRuntimeQueue": 0
+	}
+}

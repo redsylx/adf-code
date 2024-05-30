@@ -1,0 +1,41 @@
+{
+    "PipelineName": "sample_copy_data",
+    "PipelineRunId": "bb618370-19ff-4225-97c3-0e76099ab1e7",
+    "JobId": "bb618370-19ff-4225-97c3-0e76099ab1e7",
+    "ActivityRunId": "f4472f48-459d-46b6-bd8e-3b9a7748329b",
+    "ExecutionStartTime": "2024-05-30T03:32:28.3100797Z",
+    "ExecutionEndTime": "2024-05-30T03:32:30.3175107Z",
+    "Status": "Succeeded",
+    "Error": null,
+    "Output": {
+        "effectiveIntegrationRuntime": "AutoResolveIntegrationRuntime (Southeast Asia)",
+        "executionDuration": 0,
+        "durationInQueue": {
+            "integrationRuntimeQueue": 1
+        },
+        "billingReference": {
+            "activityType": "ExternalActivity",
+            "billableDuration": [
+                {
+                    "meterType": "AzureIR",
+                    "duration": 0.016666666666666666,
+                    "unit": "Hours"
+                }
+            ]
+        }
+    },
+    "ExecutionDetails": {
+        "integrationRuntime": [
+            {
+                "name": "AutoResolveIntegrationRuntime",
+                "type": "Managed",
+                "location": "Southeast Asia"
+            }
+        ]
+    },
+    "StatusCode": 200,
+    "ExecutionStatus": "Pass",
+    "Duration": "00:00:02.0074310",
+    "RecoveryStatus": "None",
+    "ActivityType": "SqlServerStoredProcedure"
+}
