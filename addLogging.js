@@ -2,13 +2,26 @@ const fs = require('fs');
 const path = require('path');
 
 const LOG_COPY_NAME = "LoggingPipeline";
+const SOURCE_NAME = "BW";
+let NEW_LOG_ACTIVITIES = [];
 
 function getSourceTableName(activity) {
     return activity.inputs.filter(input => input.type == "DatasetReference")[0]?.parameters?.sourceTableName;
 }
 
+function getTargetTableName(activity) {
+    let outputs = activity.outputs;
+    if(!outputs || outputs.length == 0) return "";
+    let output = outputs[0]
+    let directoryName = output?.parameters?.directoryName
+    let directoryNames = directoryName.split("/");
+    let targetTableName = directoryNames[directoryNames.length - 1];
+    return targetTableName;
+}
+
 function createLogActivity_Copy(activity, index) {
     const sourceTableName = getSourceTableName(activity);
+    const targetTableName = getTargetTableName(activity);
     return {
         name: `Log Copy ${index}`,
         type: "ExecutePipeline",
@@ -32,7 +45,7 @@ function createLogActivity_Copy(activity, index) {
             waitOnCompletion: true,
             parameters: {
                 SourceTable: sourceTableName,
-                TargetTable: "",
+                TargetTable: targetTableName,
                 UpdatedBy: {
                     value: "@pipeline().Pipeline",
                     type: "Expression"
@@ -41,7 +54,8 @@ function createLogActivity_Copy(activity, index) {
                     value: `@activity('${activity.name}')`,
                     type: "Expression"
                 },
-                ProcessName: activity.name
+                ProcessName: activity.name,
+                SourceName: SOURCE_NAME
             }
         }
     }
@@ -102,13 +116,25 @@ function updatePipeline(fileName) {
         let copyActivity = copyActivities[i];
         if (skipCopyActivities.includes(copyActivity.name)) continue;
         let newActivity = createLogActivity_Copy(copyActivity, i + 1);
+        NEW_LOG_ACTIVITIES.push(
+            {
+                activity_name: copyActivity.name,
+                log_name: newActivity.name,
+                param_source_table: newActivity.typeProperties.parameters.SourceTable,
+                param_target_table: newActivity.typeProperties.parameters.TargetTable,
+                param_source_name: newActivity.typeProperties.parameters.SourceName,
+            }
+        );
         activities.push(newActivity);
         newActivitiesCount++;
     }
 
+    console.table(NEW_LOG_ACTIVITIES);
     console.log("log added :", newActivitiesCount);
     if(!newActivitiesCount) return;
     saveJson(pipeline, fileName);
+
+    NEW_LOG_ACTIVITIES = [];
 }
 
 function detailPipeline(fileName) {
@@ -136,5 +162,5 @@ function detailPipeline(fileName) {
     console.table(arr)
 }
 
-// updatePipeline("DailyMasterData02");
-detailPipeline();
+updatePipeline("DailyMasterData02");
+// detailPipeline();
