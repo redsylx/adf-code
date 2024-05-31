@@ -1,0 +1,5176 @@
+{
+  "name": "DailyMasterData02",
+  "properties": {
+    "activities": [
+      {
+        "name": "Copy data OHSAPPROJ to ADLS",
+        "description": "Extract table OHSAPPROJ to Data Lake for staging",
+        "type": "Copy",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.1:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "userProperties": [],
+        "typeProperties": {
+          "source": {
+            "type": "SapTableSource",
+            "customRfcReadTableFunctionModule": "",
+            "rfcTableFields": "",
+            "partitionOption": "None"
+          },
+          "sink": {
+            "type": "ParquetSink",
+            "storeSettings": {
+              "type": "AzureBlobFSWriteSettings"
+            },
+            "formatSettings": {
+              "type": "ParquetWriteSettings"
+            }
+          },
+          "enableStaging": false,
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "PSPNR",
+                  "type": "String",
+                  "physicalType": "N"
+                },
+                "sink": {
+                  "name": "PSPNR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "PSPID",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "PSPID",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "POST1",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "POST1",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "OBJNR",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "OBJNR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "ERNAM",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "ERNAM",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "ERDAT",
+                  "type": "String",
+                  "physicalType": "D"
+                },
+                "sink": {
+                  "name": "ERDAT",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "AENAM",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "AENAM",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "AEDAT",
+                  "type": "String",
+                  "physicalType": "D"
+                },
+                "sink": {
+                  "name": "AEDAT",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "KIMSK",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "KIMSK",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "AUTOD",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "AUTOD",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "STSPD",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "STSPD",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "STSPR",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "STSPR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "VERNR",
+                  "type": "String",
+                  "physicalType": "N"
+                },
+                "sink": {
+                  "name": "VERNR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "VERNA",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "VERNA",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "ASTNR",
+                  "type": "String",
+                  "physicalType": "N"
+                },
+                "sink": {
+                  "name": "ASTNR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "ASTNA",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "ASTNA",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "VBUKR",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "VBUKR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "VGSBR",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "VGSBR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "VKOKR",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "VKOKR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "PRCTR",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "PRCTR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "PWHIE",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "PWHIE",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "ZUORD",
+                  "type": "String",
+                  "physicalType": "N"
+                },
+                "sink": {
+                  "name": "ZUORD",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "TRMEQ",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "TRMEQ",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "PLFAZ",
+                  "type": "String",
+                  "physicalType": "D"
+                },
+                "sink": {
+                  "name": "PLFAZ",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "PLSEZ",
+                  "type": "String",
+                  "physicalType": "D"
+                },
+                "sink": {
+                  "name": "PLSEZ",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "WERKS",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "WERKS",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "KALID",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "KALID",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "VGPLF",
+                  "type": "String",
+                  "physicalType": "N"
+                },
+                "sink": {
+                  "name": "VGPLF",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "EWPLF",
+                  "type": "String",
+                  "physicalType": "N"
+                },
+                "sink": {
+                  "name": "EWPLF",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "ZTEHT",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "ZTEHT",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "NZANZ",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "NZANZ",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "PLNAW",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "PLNAW",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "VPROF",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "VPROF",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "PROFL",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "PROFL",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "BPROF",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "BPROF",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "TXTSP",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "TXTSP",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "KOSTL",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "KOSTL",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "KTRG",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "KTRG",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "AEDTE",
+                  "type": "String",
+                  "physicalType": "D"
+                },
+                "sink": {
+                  "name": "AEDTE",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "AEDTP",
+                  "type": "String",
+                  "physicalType": "D"
+                },
+                "sink": {
+                  "name": "AEDTP",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "BERST",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "BERST",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "BERTR",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "BERTR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "BERKO",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "BERKO",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "BERBU",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "BERBU",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "SPSNR",
+                  "type": "String",
+                  "physicalType": "N"
+                },
+                "sink": {
+                  "name": "SPSNR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "BESTA",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "BESTA",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "SCOPE",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "SCOPE",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "XSTAT",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "XSTAT",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "TXJCD",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "TXJCD",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "ZSCHM",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "ZSCHM",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "SCPRF",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "SCPRF",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "IMPRF",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "IMPRF",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "FMPRF",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "FMPRF",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "ABGSL",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "ABGSL",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "POSTU",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "POSTU",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "PPROF",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "PPROF",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "PLINT",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "PLINT",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "LOEVM",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "LOEVM",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "INACT",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "INACT",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "KZBWS",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "KZBWS",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "SMPRF",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "SMPRF",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "FLGVRG",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "FLGVRG",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "GRTOP",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "GRTOP",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "PGPRF",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "PGPRF",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "STORT",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "STORT",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "LOGSYSTEM",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "LOGSYSTEM",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "KZERB",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "KZERB",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "PARGR",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "PARGR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "FUNC_AREA",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "FUNC_AREA",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "VKORG",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "VKORG",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "VTWEG",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "VTWEG",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "SPART",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "SPART",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "DPPPROF",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "DPPPROF",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "VPKSTU",
+                  "type": "String",
+                  "physicalType": "N"
+                },
+                "sink": {
+                  "name": "VPKSTU",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "PSPID_EDIT",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "PSPID_EDIT",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "VNAME",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "VNAME",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "RECID",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "RECID",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "ETYPE",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "ETYPE",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "OTYPE",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "OTYPE",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "JIBCL",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "JIBCL",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "JIBSA",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "JIBSA",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "SCHTYP",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "SCHTYP",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "SPROG",
+                  "type": "String",
+                  "physicalType": "D"
+                },
+                "sink": {
+                  "name": "SPROG",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "EPROG",
+                  "type": "String",
+                  "physicalType": "D"
+                },
+                "sink": {
+                  "name": "EPROG",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "FERC_IND",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "FERC_IND",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "PROJ_STATUS",
+                  "type": "String",
+                  "physicalType": "b"
+                },
+                "sink": {
+                  "name": "PROJ_STATUS",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          }
+        },
+        "inputs": [
+          {
+            "referenceName": "dsSapTblGeneral",
+            "type": "DatasetReference",
+            "parameters": {
+              "sourceTableName": "/BIC/OHPROJ"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "referenceName": "dsParqSapGeneral",
+            "type": "DatasetReference",
+            "parameters": {
+              "directoryName": "PTRO_STAGING/ADF/SAP/stg_SAPPROJ",
+              "fileName": "OHSAPPROJ.parquet",
+              "containerName": {
+                "value": "@pipeline().globalParameters.DataSourceLocation",
+                "type": "Expression"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "External Table PROJ",
+        "type": "Script",
+        "dependsOn": [
+          {
+            "activity": "Copy data OHSAPPROJ to ADLS",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "userProperties": [],
+        "linkedServiceName": {
+          "referenceName": "AzureSynapseAnalytics",
+          "type": "LinkedServiceReference"
+        },
+        "typeProperties": {
+          "scripts": [
+            {
+              "type": "Query",
+              "text": "IF EXISTS(SELECT * FROM sys.external_tables WHERE object_id = OBJECT_ID('dbo.SAPPROJ_TMP')) \nBEGIN\n   DROP EXTERNAL TABLE dbo.SAPPROJ_TMP;\nEND;\n \nCREATE EXTERNAL TABLE [dbo].[SAPPROJ_TMP](\n\tPSPNR_PROJECTDEF [nvarchar](16),\n\tPSPID_PROJECTDEF [nvarchar](48),\n\tPOST1_DESCRIPTION [nvarchar](80), \n\tOBJNR_OBJECTNUMBER [nvarchar](44),\n\tERNAM_CREATEDBY [nvarchar](24), \n\tERDAT_CREATEDON [nvarchar](16), \n\tAENAM_CHANGEDBY [nvarchar](24), \n\tAEDAT_CHANGEDON [nvarchar](16), \n\tKIMSK_MASKSHORTID [nvarchar](48), \n\tAUTOD_TRANSFERTODEF [nvarchar](2), \n\tSTSPD_PDSTSPROFILE [nvarchar](16), \n\tSTSPR_WBSSTSPROF [nvarchar](16), \n\tVERNR_PERSRESPNO [nvarchar](16), \n\tVERNA_PERSRESPNAME [nvarchar](50), \n\tASTNR_APPLICANTNO [nvarchar](16), \n\tASTNA_APPLICANT [nvarchar](50), \n\tVBUKR_COMPANYCODE [nvarchar](8),\n\tVGSBR_BUSINESSAREA [nvarchar](8), \n\tVKOKR_COAREA [nvarchar](8), \n\tPRCTR_PROFITCENTER [nvarchar](20), \n\tPWHIE_PROJCURRENCY [nvarchar](10), \n\tZUORD_NETWORKASST [nvarchar](2), \n\tTRMEQ_ACTIVITYDATES [nvarchar](2), \n\tPLFAZ_STARTDATE [nvarchar](16), \n\tPLSEZ_FINISHDATE [nvarchar](16), \n\tWERKS_PLANT [nvarchar](8), \n\tKALID_FACTORYCALEND [nvarchar](4), \n\tVGPLF_PLANMETHBASIC [nvarchar](2), \n\tEWPLF_PLANMETHFCST [nvarchar](2), \n\tZTEHT_TIMEUNIT [nvarchar](6), \n\tNZANZ_DISPLNETWKHDR [nvarchar](2), \n\tPLNAW_APPLICATION [nvarchar](2), \n\tVPROF_NETWORKPROFILE [nvarchar](14), \n\tPROFL_PROJECTPROFILE [nvarchar](14), \n\tBPROF_BUDGETPROFILE [nvarchar](12), \n\tTXTSP_LANGUAGE [nvarchar](2), \n\tKOSTL_COSTCENTER [nvarchar](20), \n\tKTRG_COSTOBJECT [nvarchar](24), \n\tAEDTE_LASTBASICSCHD [nvarchar](16), \n\tAEDTP_LASTFCSTSCHED [nvarchar](16), \n\tBERST_MSTRDATAAUTH [nvarchar](32), \n\tBERTR_DATEAUTH [nvarchar](32), \n\tBERKO_COSTSREVAUTH [nvarchar](32), \n\tBERBU_BUDGETAUTH [nvarchar](32), \n\tSPSNR_CURRENTPROJNO [nvarchar](16), \n\tBESTA_PROJECTSTOCK [nvarchar](2), \n\tSCOPE_OBJECTCLASS [nvarchar](4), \n\tXSTAT_STATISTICAL [nvarchar](2), \n\tTXJCD_TAXJUR [nvarchar](30), \n\tZSCHM_INTERESTPROF [nvarchar](14), \n\tSCPRF_WBSSCHEDPROF [nvarchar](24), \n\tIMPRF_INVESTPROFILE [nvarchar](12), \n\tFMPRF_PYMTPLANPROF [nvarchar](12), \n\tABGSL_RAKEY [nvarchar](12), \n\tPOSTU_DESCRIPTION [nvarchar](80), \n\tPPROF_PLANPROFILE [nvarchar](12), \n\tPLINT_INTEGPLANNING [nvarchar](2), \n\tLOEVM_DELETE [nvarchar](2), \n\tINACT_INACTIVE [nvarchar](2), \n\tKZBWS_VALUATION [nvarchar](2), \n\tSMPRF_SIMULATIONPROF [nvarchar](14), \n\tFLGVRG_CALCWITHACT [nvarchar](2), \n\tGRTOP_AUTORQMNTSGRP [nvarchar](2), \n\tPGPRF_DISTRIPROFILE [nvarchar](12), \n\tSTORT_LOCATION [nvarchar](20), \n\tLOGSYSTEM_LOGICALSYSTEM [nvarchar](20), \n\tKZERB_PROJSUMMMASTDA [nvarchar](2), \n\tPARGR_PARTNDETPROC [nvarchar](8), \n\tFUNC_AREA_FUNCTIONALAREA [nvarchar](32), \n\tVKORG_SALESORG [nvarchar](8), \n\tVTWEG_DISTRCHANNEL [nvarchar](4), \n\tSPART_DIVISION [nvarchar](4), \n\tDPPPROF_DIPPROFILE [nvarchar](16), \n\tVPKSTU_LEVEL [nvarchar](4), \n\tPSPID_EDIT_PROJECTDEF [nvarchar](48), \n\tVNAME_JOINTVENTURE [nvarchar](12), \n\tRECID_RECOVERYINDIC [nvarchar](4), \n\tETYPE_EQUITYTYPE [nvarchar](6),\n\tOTYPE_JVOBJECTTYPE [nvarchar](8),\n\tJIBCL_JIBJIBECLASS [nvarchar](6),\n\tJIBSA_JIBJIBESBCLSA [nvarchar](10),\n\tSCHTYP_SCHEDSCENARIO [nvarchar](2),\n\tSPROG_FCSTSTARTDATE [nvarchar](16),\n\tEPROG_FINISHDATEF [nvarchar](16),\n\tFERC_IND_REGINDICATOR [nvarchar](8),\n\t[PROJ_STATUS] [tinyint]\n)\nWITH (\n    LOCATION = 'PTRO_STAGING/ADF/SAP/stg_SAPPROJ',\n    DATA_SOURCE = ExternalDataSourceDataLake,  \n    FILE_FORMAT = parquet_format\n)"
+            }
+          ],
+          "scriptBlockExecutionTimeout": "02:00:00"
+        }
+      },
+      {
+        "name": "Insert into Synapse PROJ",
+        "type": "Script",
+        "dependsOn": [
+          {
+            "activity": "External Table PROJ",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "userProperties": [],
+        "linkedServiceName": {
+          "referenceName": "AzureSynapseAnalytics",
+          "type": "LinkedServiceReference"
+        },
+        "typeProperties": {
+          "scripts": [
+            {
+              "type": "Query",
+              "text": "IF EXISTS(SELECT * FROM sys.external_tables WHERE object_id = OBJECT_ID('dbo.SAPPROJ_TMP')) \nBEGIN\n\tTRUNCATE TABLE [dbo].[SAPPROJ];\n\n\tINSERT INTO [dbo].[SAPPROJ]\n\tSELECT \n\t\t*,\n\t\tleft(replace(replace(replace(CONVERT([nvarchar],dbo.fnConvertUtcToLocalTime(getdate()),(21)),'-',''),':',''),space((1)),''),(8))\n\tFROM [dbo].[SAPPROJ_TMP]\nEND \n\nPRINT N'No Temporary table Generated';"
+            }
+          ],
+          "scriptBlockExecutionTimeout": "02:00:00"
+        }
+      },
+      {
+        "name": "Copy data OHSAPPRPS to ADLS",
+        "description": "Extract table OHSAPPRPS to Data Lake for staging",
+        "type": "Copy",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.1:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "userProperties": [],
+        "typeProperties": {
+          "source": {
+            "type": "SapTableSource",
+            "customRfcReadTableFunctionModule": "",
+            "rfcTableFields": "",
+            "partitionOption": "None"
+          },
+          "sink": {
+            "type": "ParquetSink",
+            "storeSettings": {
+              "type": "AzureBlobFSWriteSettings"
+            },
+            "formatSettings": {
+              "type": "ParquetWriteSettings"
+            }
+          },
+          "enableStaging": false,
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "PSPNR",
+                  "type": "String",
+                  "physicalType": "N"
+                },
+                "sink": {
+                  "name": "PSPNR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "POSID",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "POSID",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "POST1",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "POST1",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "OBJNR",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "OBJNR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "PSPHI",
+                  "type": "String",
+                  "physicalType": "N"
+                },
+                "sink": {
+                  "name": "PSPHI",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "POSKI",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "POSKI",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "ERNAM",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "ERNAM",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "ERDAT",
+                  "type": "String",
+                  "physicalType": "D"
+                },
+                "sink": {
+                  "name": "ERDAT",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "AENAM",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "AENAM",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "AEDAT",
+                  "type": "String",
+                  "physicalType": "D"
+                },
+                "sink": {
+                  "name": "AEDAT",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "VERNR",
+                  "type": "String",
+                  "physicalType": "N"
+                },
+                "sink": {
+                  "name": "VERNR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "VERNA",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "VERNA",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "ASTNR",
+                  "type": "String",
+                  "physicalType": "N"
+                },
+                "sink": {
+                  "name": "ASTNR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "ASTNA",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "ASTNA",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "PBUKR",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "PBUKR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "PGSBR",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "PGSBR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "PKOKR",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "PKOKR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "PRCTR",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "PRCTR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "PRART",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "PRART",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "STUFE",
+                  "type": "String",
+                  "physicalType": "b"
+                },
+                "sink": {
+                  "name": "STUFE",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "PLAKZ",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "PLAKZ",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "BELKZ",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "BELKZ",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "FAKKZ",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "FAKKZ",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "NPFAZ",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "NPFAZ",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "ZUORD",
+                  "type": "String",
+                  "physicalType": "N"
+                },
+                "sink": {
+                  "name": "ZUORD",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "TRMEQ",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "TRMEQ",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "KVEWE",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "KVEWE",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "KAPPL",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "KAPPL",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "KALSM",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "KALSM",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "ZSCHL",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "ZSCHL",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "ABGSL",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "ABGSL",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "AKOKR",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "AKOKR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "AKSTL",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "AKSTL",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "FKOKR",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "FKOKR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "FKSTL",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "FKSTL",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "FABKL",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "FABKL",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "PSPRI",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "PSPRI",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "EQUNR",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "EQUNR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "TPLNR",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "TPLNR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "PWPOS",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "PWPOS",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "WERKS",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "WERKS",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "TXTSP",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "TXTSP",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "SLWID",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "SLWID",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "USR00",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "USR00",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "USR01",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "USR01",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "USR02",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "USR02",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "USR03",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "USR03",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "USR04",
+                  "type": "Decimal",
+                  "physicalType": "P"
+                },
+                "sink": {
+                  "name": "USR04",
+                  "type": "Decimal",
+                  "physicalType": "DECIMAL"
+                }
+              },
+              {
+                "source": {
+                  "name": "USE04",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "USE04",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "USR05",
+                  "type": "Decimal",
+                  "physicalType": "P"
+                },
+                "sink": {
+                  "name": "USR05",
+                  "type": "Decimal",
+                  "physicalType": "DECIMAL"
+                }
+              },
+              {
+                "source": {
+                  "name": "USE05",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "USE05",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "USR06",
+                  "type": "Decimal",
+                  "physicalType": "P"
+                },
+                "sink": {
+                  "name": "USR06",
+                  "type": "Decimal",
+                  "physicalType": "DECIMAL"
+                }
+              },
+              {
+                "source": {
+                  "name": "USE06",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "USE06",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "USR07",
+                  "type": "Decimal",
+                  "physicalType": "P"
+                },
+                "sink": {
+                  "name": "USR07",
+                  "type": "Decimal",
+                  "physicalType": "DECIMAL"
+                }
+              },
+              {
+                "source": {
+                  "name": "USE07",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "USE07",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "USR08",
+                  "type": "String",
+                  "physicalType": "D"
+                },
+                "sink": {
+                  "name": "USR08",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "USR09",
+                  "type": "String",
+                  "physicalType": "D"
+                },
+                "sink": {
+                  "name": "USR09",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "USR10",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "USR10",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "USR11",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "USR11",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "KOSTL",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "KOSTL",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "KTRG",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "KTRG",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "BERST",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "BERST",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "BERTR",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "BERTR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "BERKO",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "BERKO",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "BERBU",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "BERBU",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "CLASF",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "CLASF",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "SPSNR",
+                  "type": "String",
+                  "physicalType": "N"
+                },
+                "sink": {
+                  "name": "SPSNR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "SCOPE",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "SCOPE",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "XSTAT",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "XSTAT",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "TXJCD",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "TXJCD",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "ZSCHM",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "ZSCHM",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "IMPRF",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "IMPRF",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "EVGEW",
+                  "type": "Decimal",
+                  "physicalType": "P"
+                },
+                "sink": {
+                  "name": "EVGEW",
+                  "type": "Decimal",
+                  "physicalType": "DECIMAL"
+                }
+              },
+              {
+                "source": {
+                  "name": "AENNR",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "AENNR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "SUBPR",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "SUBPR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "POSTU",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "POSTU",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "PLINT",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "PLINT",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "LOEVM",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "LOEVM",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "KZBWS",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "KZBWS",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "FPLNR",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "FPLNR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "TADAT",
+                  "type": "String",
+                  "physicalType": "D"
+                },
+                "sink": {
+                  "name": "TADAT",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "IZWEK",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "IZWEK",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "ISIZE",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "ISIZE",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "IUMKZ",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "IUMKZ",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "ABUKR",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "ABUKR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "GRPKZ",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "GRPKZ",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "PGPRF",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "PGPRF",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "LOGSYSTEM",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "LOGSYSTEM",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "PSPNR_LOGS",
+                  "type": "String",
+                  "physicalType": "N"
+                },
+                "sink": {
+                  "name": "PSPNR_LOGS",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "STORT",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "STORT",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "FUNC_AREA",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "FUNC_AREA",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "KLVAR",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "KLVAR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "KALNR",
+                  "type": "String",
+                  "physicalType": "N"
+                },
+                "sink": {
+                  "name": "KALNR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "POSID_EDIT",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "POSID_EDIT",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "PSPKZ",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "PSPKZ",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "MATNR",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "MATNR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "VLPSP",
+                  "type": "String",
+                  "physicalType": "N"
+                },
+                "sink": {
+                  "name": "VLPSP",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "VLPKZ",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "VLPKZ",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "SORT1",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "SORT1",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "SORT2",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "SORT2",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "SORT3",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "SORT3",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "VNAME",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "VNAME",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "RECID",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "RECID",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "ETYPE",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "ETYPE",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "OTYPE",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "OTYPE",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "JIBCL",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "JIBCL",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "JIBSA",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "JIBSA",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "CGPL_GUID16",
+                  "type": "String",
+                  "physicalType": "X"
+                },
+                "sink": {
+                  "name": "CGPL_GUID16",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "CGPL_LOGSYS",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "CGPL_LOGSYS",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "CGPL_OBJTYPE",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "CGPL_OBJTYPE",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "ADPSP",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "ADPSP",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "RFIPPNT",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "RFIPPNT",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "FERC_IND",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "FERC_IND",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "PRPS_STATUS",
+                  "type": "String",
+                  "physicalType": "b"
+                },
+                "sink": {
+                  "name": "PRPS_STATUS",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          }
+        },
+        "inputs": [
+          {
+            "referenceName": "dsSapTblGeneral",
+            "type": "DatasetReference",
+            "parameters": {
+              "sourceTableName": "/BIC/OHPRPS"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "referenceName": "dsParqSapGeneral",
+            "type": "DatasetReference",
+            "parameters": {
+              "directoryName": "PTRO_STAGING/ADF/SAP/stg_SAPPRPS",
+              "fileName": "OHSAPPRPS.parquet",
+              "containerName": {
+                "value": "@pipeline().globalParameters.DataSourceLocation",
+                "type": "Expression"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "External Table PRPS",
+        "type": "Script",
+        "dependsOn": [
+          {
+            "activity": "Copy data OHSAPPRPS to ADLS",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "userProperties": [],
+        "linkedServiceName": {
+          "referenceName": "AzureSynapseAnalytics",
+          "type": "LinkedServiceReference"
+        },
+        "typeProperties": {
+          "scripts": [
+            {
+              "type": "Query",
+              "text": "IF EXISTS(SELECT * FROM sys.external_tables WHERE object_id = OBJECT_ID('dbo.SAPPRPS_TMP')) \nBEGIN\n   DROP EXTERNAL TABLE dbo.SAPPRPS_TMP;\nEND;\n \nCREATE EXTERNAL TABLE [dbo].[SAPPRPS_TMP](\n\tPSPNR_WBSELEMENT [nvarchar](16),\n\tPOSID_WBSELEMENT [nvarchar](48),\n\tPOST1_DESCRIPTION [nvarchar](80), \n\tOBJNR_OBJECTNUMBER [nvarchar](44), \n\tPSPHI_CURRENTPROJNO [nvarchar](16), \n\tPOSKI_SHORTID [nvarchar](32), \n\tERNAM_CREATEDBY [nvarchar](24), \n\tERDAT_CREATEDON [nvarchar](16), \n\tAENAM_CHANGEDBY [nvarchar](24), \n\tAEDAT_CHANGEDON [nvarchar](16), \n\tVERNR_PERSRESPNO [nvarchar](16), \n\tVERNA_PERSRESPNAME [nvarchar](50), \n\tASTNR_APPLICANTNO [nvarchar](16), \n\tASTNA_APPLICANT [nvarchar](50), \n\tPBUKR_COMPANYCODE [nvarchar](8),\n\tPGSBR_BUSAREA [nvarchar](8), \n\tPKOKR_COAREA [nvarchar](8), \n\tPRCTR_PROFITCENTER [nvarchar](20), \n\tPRART_PROJTYPE [nvarchar](4), \n\t[STUFE] [tinyint], \n\tPLAKZ_PLANNINGELEM [nvarchar](2), \n\tBELKZ_AAELEMENT [nvarchar](2), \n\tFAKKZ_BILLINGELEM [nvarchar](2), \n\tNPFAZ_NETWORKORDER [nvarchar](2), \n\tZUORD_NETWORKASST [nvarchar](2), \n\tTRMEQ_ACTIVITYDATES [nvarchar](2), \n\tKVEWE_USAGE [nvarchar](2), \n\tKAPPL_APPLICATION [nvarchar](4), \n\tKALSM_COSTINGSHEET [nvarchar](12), \n\tZSCHL_OVERHEADKEY [nvarchar](12), \n\tABGSL_RAKEY [nvarchar](12), \n\tAKOKR_CAREQUESTING [nvarchar](8), \n\tAKSTL_REQCOSTCENTER [nvarchar](20), \n\tFKOKR_CARESP [nvarchar](8), \n\tFKSTL_RESPCOSTCNTR [nvarchar](20), \n\tFABKL_FACTORYCALEND [nvarchar](4), \n\tPSPRI_PRIORITY [nvarchar](2), \n\tEQUNR_EQUIPMENT [nvarchar](36), \n\tTPLNR_FUNCTIONALLOC [nvarchar](60), \n\tPWPOS_CURRENCY [nvarchar](10), \n\tWERKS_PLANT [nvarchar](8), \n\tTXTSP_LANGUAGE [nvarchar](2), \n\tSLWID_FIELDKEY [nvarchar](14), \n\tUSR00_UFIELD1WBS [nvarchar](40), \n\tUSR01_UFIELD2WBS [nvarchar](40), \n\tUSR02_UFIELD3WBS [nvarchar](20), \n\tUSR03_UFIELD4WBS [nvarchar](20), \n\t[USR04] [numeric](13, 3),\n\tUSE04_UFUNIT1WBS [nvarchar](6), \n\t[USR05] [numeric](13, 3),\n\tUSE05_UFUNIT2WBS [nvarchar](6), \n\t[USR06] [numeric](13, 2),\n\tUSE06_UFUNIT1WBS [nvarchar](10), \n\t[USR07] [numeric](13, 2),\n\tUSE07_UFUNIT2WBS [nvarchar](10), \n\tUSR08_UFDATE1WBS [nvarchar](16), \n\tUSR09_UFDATE2WBS [nvarchar](16), \n\tUSR10_UFIND1WBS [nvarchar](2), \n\tUSR11_UFIND2WBS [nvarchar](2), \n\tKOSTL_CCTRPOSTED [nvarchar](20), \n\tKTRG_COSTOBJECT [nvarchar](24), \n\tBERST_MSTRDATAAUTH [nvarchar](32), \n\tBERTR_DATEAUTH [nvarchar](32), \n\tBERKO_COSTSREVAUTH [nvarchar](32), \n\tBERBU_BUDGETAUTH [nvarchar](32), \n\tCLASF_PROJECTSUM [nvarchar](2), \n\tSPSNR_STDWBSELEMENT [nvarchar](16), \n\tSCOPE_OBJECTCLASS [nvarchar](4), \n\tXSTAT_STATISTICAL [nvarchar](2), \n\tTXJCD_TAXJUR [nvarchar](30), \n\tZSCHM_INTERESTPROF [nvarchar](14), \n\tIMPRF_INVESTPROFILE [nvarchar](12), \n\t[EVGEW] [numeric](9, 0),\n\tAENNR_CHANGENUMBER [nvarchar](24), \n\tSUBPR_SUBPROJECT [nvarchar](24), \n\tPOSTU_DESCRIPTION [nvarchar](80), \n\tPLINT_INTEGPLANNING [nvarchar](2), \n\tLOEVM_DELETE [nvarchar](2), \n\tKZBWS_VALUATION [nvarchar](2), \n\tFPLNR_BILLINGPLANNO [nvarchar](20), \n\tTADAT_TECHCOMPLETE [nvarchar](16), \n\tIZWEK_INVESTREASON [nvarchar](4), \n\tISIZE_SCALE [nvarchar](4), \n\tIUMKZ_ENVIRINVEST [nvarchar](10), \n\tABUKR_REQCOCODE [nvarchar](8), \n\tGRPKZ_GROUPINGWBSEL [nvarchar](2), \n\tPGPRF_DISTRIPROFILE [nvarchar](12), \n\tLOGSYSTEM_LOGICALSYSTEM [nvarchar](20), \n\tPSPNR_LOGS_NUMFIELD8 [nvarchar](16), \n\tSTORT_LOCATION [nvarchar](20), \n\tFUNC_AREA_FUNCTIONALAREA [nvarchar](32), \n\tKLVAR_COSTINGVARIANT [nvarchar](8), \n\tKALNR_COSTESTIMATENO [nvarchar](24), \n\tPOSID_EDIT_WBSELEMENT [nvarchar](48), \n\tPSPKZ_PRODUCTIONLOT [nvarchar](2), \n\tMATNR_MATERIAL [nvarchar](36), \n\tVLPSP_REFWBSELEMENT [nvarchar](16), \n\tVLPKZ_REFERENCEWBS [nvarchar](2), \n\tSORT1_SORTSTRING1 [nvarchar](20), \n\tSORT2_SORTSTRING2 [nvarchar](20), \n\tSORT3_SORTSTRING3 [nvarchar](20), \n\tVNAME_JOINTVENTURE [nvarchar](12), \n\tRECID_RECOVERYINDIC [nvarchar](4), \n\tETYPE_EQUITYTYPE [nvarchar](6), \n\tOTYPE_JVOBJECTTYPE [nvarchar](8), \n\tJIBCL_JIBJIBECLASS [nvarchar](6), \n\tJIBSA_JIBJIBESBCLSA [nvarchar](10), \n\t[CGPL_GUID16] [varbinary](50), \n\tCGPL_LOGSYS_LOGICALSYSTEM [nvarchar](20), \n\tCGPL_OBJTYPE_OBJECTTYPE [nvarchar](6), \n\tADPSP_REFELEMENTPMPS [nvarchar](80), \n\tRFIPPNT_REFERENCEPOINT [nvarchar](40), \n\tFERC_IND_REGINDICATOR [nvarchar](8), \n\t[PRPS_STATUS] [tinyint], \n\t[POSID_ORI] [nvarchar](48)\n)\nWITH (\n    LOCATION = 'PTRO_STAGING/ADF/SAP/stg_SAPPRPS',\n    DATA_SOURCE = ExternalDataSourceDataLake,  \n    FILE_FORMAT = parquet_format\n)"
+            }
+          ],
+          "scriptBlockExecutionTimeout": "02:00:00"
+        }
+      },
+      {
+        "name": "Insert into Synapse PRPS",
+        "type": "Script",
+        "dependsOn": [
+          {
+            "activity": "External Table PRPS",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "userProperties": [],
+        "linkedServiceName": {
+          "referenceName": "AzureSynapseAnalytics",
+          "type": "LinkedServiceReference"
+        },
+        "typeProperties": {
+          "scripts": [
+            {
+              "type": "Query",
+              "text": "IF EXISTS(SELECT * FROM sys.external_tables WHERE object_id = OBJECT_ID('dbo.SAPPRPS_TMP')) \nBEGIN\n\tTRUNCATE TABLE [dbo].[SAPPRPS];\n\n\tINSERT INTO [dbo].[SAPPRPS]\n\tSELECT \n\t\t*,\n\t\tleft(replace(replace(replace(CONVERT([nvarchar],dbo.fnConvertUtcToLocalTime(getdate()),(21)),'-',''),':',''),space((1)),''),(8))\n\tFROM [dbo].[SAPPRPS_TMP]\nEND \n\nPRINT N'Data Inserted Successfully';"
+            }
+          ],
+          "scriptBlockExecutionTimeout": "02:00:00"
+        }
+      },
+      {
+        "name": "Copy data OHSAPTCURR to ADLS",
+        "description": "Extract table OHSAPTCURR to Data Lake for staging",
+        "type": "Copy",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.1:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "userProperties": [],
+        "typeProperties": {
+          "source": {
+            "type": "SapTableSource",
+            "customRfcReadTableFunctionModule": "",
+            "rfcTableFields": "",
+            "partitionOption": "None"
+          },
+          "sink": {
+            "type": "ParquetSink",
+            "storeSettings": {
+              "type": "AzureBlobFSWriteSettings"
+            },
+            "formatSettings": {
+              "type": "ParquetWriteSettings"
+            }
+          },
+          "enableStaging": false,
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "KURST",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "KURST",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "FCURR",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "FCURR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "TCURR",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "TCURR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "GDATU",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "GDATU",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "UKURS",
+                  "type": "Decimal",
+                  "physicalType": "P"
+                },
+                "sink": {
+                  "name": "UKURS",
+                  "type": "Decimal",
+                  "physicalType": "DECIMAL"
+                }
+              },
+              {
+                "source": {
+                  "name": "FFACT",
+                  "type": "Decimal",
+                  "physicalType": "P"
+                },
+                "sink": {
+                  "name": "FFACT",
+                  "type": "Decimal",
+                  "physicalType": "DECIMAL"
+                }
+              },
+              {
+                "source": {
+                  "name": "TFACT",
+                  "type": "Decimal",
+                  "physicalType": "P"
+                },
+                "sink": {
+                  "name": "TFACT",
+                  "type": "Decimal",
+                  "physicalType": "DECIMAL"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          }
+        },
+        "inputs": [
+          {
+            "referenceName": "dsSapTblGeneral",
+            "type": "DatasetReference",
+            "parameters": {
+              "sourceTableName": "/BIC/OHTCURR"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "referenceName": "dsParqSapGeneral",
+            "type": "DatasetReference",
+            "parameters": {
+              "directoryName": "PTRO_STAGING/ADF/SAP/stg_SAPTCURR",
+              "fileName": "OHSAPTCURR.parquet",
+              "containerName": {
+                "value": "@pipeline().globalParameters.DataSourceLocation",
+                "type": "Expression"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "External Table TCURR",
+        "type": "Script",
+        "dependsOn": [
+          {
+            "activity": "Copy data OHSAPTCURR to ADLS",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "userProperties": [],
+        "linkedServiceName": {
+          "referenceName": "AzureSynapseAnalytics",
+          "type": "LinkedServiceReference"
+        },
+        "typeProperties": {
+          "scripts": [
+            {
+              "type": "Query",
+              "text": "IF EXISTS(SELECT * FROM sys.external_tables WHERE object_id = OBJECT_ID('dbo.SAPTCURR_TMP')) \nBEGIN\n   DROP EXTERNAL TABLE dbo.SAPTCURR_TMP;\nEND;\n \nCREATE EXTERNAL TABLE [dbo].[SAPTCURR_TMP](\n\tKURST_EXCHRATETYPE [nvarchar](4),\n\tFCURR_FROMCURRENCY [nvarchar](5),\n\tTCURR_TO_CURRENCY [nvarchar](5),\n\tGDATU_VALIDFROM [nvarchar](8),\n\tUKURS_EXCHANGERATE [decimal](9, 5),\n\tFFACT_RATIOFROM [decimal](9, 0),\n\tTFACT_RATIOTO [decimal](9, 0)\n)\nWITH (\n    LOCATION = 'PTRO_STAGING/ADF/SAP/stg_SAPTCURR',\n    DATA_SOURCE = ExternalDataSourceDataLake,  \n    FILE_FORMAT = parquet_format\n)"
+            }
+          ],
+          "scriptBlockExecutionTimeout": "02:00:00"
+        }
+      },
+      {
+        "name": "Insert into Synapse TCURR",
+        "type": "Script",
+        "dependsOn": [
+          {
+            "activity": "External Table TCURR",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "userProperties": [],
+        "linkedServiceName": {
+          "referenceName": "AzureSynapseAnalytics",
+          "type": "LinkedServiceReference"
+        },
+        "typeProperties": {
+          "scripts": [
+            {
+              "type": "Query",
+              "text": "IF EXISTS(SELECT * FROM sys.external_tables WHERE object_id = OBJECT_ID('dbo.SAPTCURR_TMP')) \nBEGIN\n\tTRUNCATE TABLE [dbo].[SAPTCURR];\n\n\tINSERT INTO [dbo].[SAPTCURR]\n\tSELECT \n\t\t*,\n\t\tleft(replace(replace(replace(CONVERT([nvarchar],dbo.fnConvertUtcToLocalTime(getdate()),(21)),'-',''),':',''),space((1)),''),(8))\n\tFROM [dbo].[SAPTCURR_TMP]\nEND \n\nPRINT N'Data Inserted Successfully';"
+            }
+          ],
+          "scriptBlockExecutionTimeout": "02:00:00"
+        }
+      },
+      {
+        "name": "Copy data OHSAPSKAT to ADLS",
+        "description": "Extract table OHSAPSKAT to Data Lake for staging",
+        "type": "Copy",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.1:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "userProperties": [],
+        "typeProperties": {
+          "source": {
+            "type": "SapTableSource",
+            "customRfcReadTableFunctionModule": "",
+            "rfcTableFields": "",
+            "partitionOption": "None"
+          },
+          "sink": {
+            "type": "ParquetSink",
+            "storeSettings": {
+              "type": "AzureBlobFSWriteSettings"
+            },
+            "formatSettings": {
+              "type": "ParquetWriteSettings"
+            }
+          },
+          "enableStaging": false,
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "SPRAS",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "SPRAS",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "KTOPL",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "KTOPL",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "SAKNR",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "SAKNR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "TXT20",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "TXT20",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "TXT50",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "TXT50",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "MCOD1",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "MCOD1",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          }
+        },
+        "inputs": [
+          {
+            "referenceName": "dsSapTblGeneral",
+            "type": "DatasetReference",
+            "parameters": {
+              "sourceTableName": "/BIC/OHSKAT"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "referenceName": "dsParqSapGeneral",
+            "type": "DatasetReference",
+            "parameters": {
+              "directoryName": "PTRO_STAGING/ADF/SAP/stg_SAPSKAT",
+              "fileName": "OHSAPSKAT.parquet",
+              "containerName": {
+                "value": "@pipeline().globalParameters.DataSourceLocation",
+                "type": "Expression"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "External Table SKAT",
+        "type": "Script",
+        "dependsOn": [
+          {
+            "activity": "Copy data OHSAPSKAT to ADLS",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "userProperties": [],
+        "linkedServiceName": {
+          "referenceName": "AzureSynapseAnalytics",
+          "type": "LinkedServiceReference"
+        },
+        "typeProperties": {
+          "scripts": [
+            {
+              "type": "Query",
+              "text": "IF EXISTS(SELECT * FROM sys.external_tables WHERE object_id = OBJECT_ID('dbo.SAPSKAT_TMP')) \nBEGIN\n   DROP EXTERNAL TABLE dbo.SAPSKAT_TMP;\nEND;\n \nCREATE EXTERNAL TABLE [dbo].[SAPSKAT_TMP](\n\t[SPRAS_LANGUAGE] [nvarchar](2),\n\t[KTOPL_CHARTOFACCTS] [nvarchar](4),\n\t[SAKNR_GLACCOUNT] [nvarchar](10),\n\t[TXT20_SHORTTEXT] [nvarchar](20),\n\t[TXT50_LONGTEXT] [nvarchar](50),\n\t[MCOD1_LONGTEXT] [nvarchar](25)\n)\nWITH (\n    LOCATION = 'PTRO_STAGING/ADF/SAP/stg_SAPSKAT',\n    DATA_SOURCE = ExternalDataSourceDataLake,  \n    FILE_FORMAT = parquet_format\n)"
+            }
+          ],
+          "scriptBlockExecutionTimeout": "02:00:00"
+        }
+      },
+      {
+        "name": "Insert into Synapse SKAT",
+        "type": "Script",
+        "dependsOn": [
+          {
+            "activity": "External Table SKAT",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "userProperties": [],
+        "linkedServiceName": {
+          "referenceName": "AzureSynapseAnalytics",
+          "type": "LinkedServiceReference"
+        },
+        "typeProperties": {
+          "scripts": [
+            {
+              "type": "Query",
+              "text": "IF EXISTS(SELECT * FROM sys.external_tables WHERE object_id = OBJECT_ID('dbo.SAPSKAT_TMP')) \nBEGIN\n\tTRUNCATE TABLE [dbo].[SAPSKAT];\n\n\tINSERT INTO [dbo].[SAPSKAT]\n\tSELECT \n\t\t*,\n\t\tleft(replace(replace(replace(CONVERT([nvarchar],dbo.fnConvertUtcToLocalTime(getdate()),(21)),'-',''),':',''),space((1)),''),(8))\n\tFROM [dbo].[SAPSKAT_TMP]\nEND \n\nPRINT N'Data Inserted Successfully';"
+            }
+          ],
+          "scriptBlockExecutionTimeout": "02:00:00"
+        }
+      },
+      {
+        "name": "Copy data OHSAPT001W to ADLS",
+        "description": "Extract table OHSAPT001W to Data Lake for staging",
+        "type": "Copy",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.1:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "userProperties": [],
+        "typeProperties": {
+          "source": {
+            "type": "SapTableSource",
+            "customRfcReadTableFunctionModule": "",
+            "rfcTableFields": "",
+            "partitionOption": "None"
+          },
+          "sink": {
+            "type": "ParquetSink",
+            "storeSettings": {
+              "type": "AzureBlobFSWriteSettings"
+            },
+            "formatSettings": {
+              "type": "ParquetWriteSettings"
+            }
+          },
+          "enableStaging": false,
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "WERKS",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "WERKS",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "NAME1",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "NAME1",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "BWKEY",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "BWKEY",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "KUNNR",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "KUNNR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "LIFNR",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "LIFNR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "FABKL",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "FABKL",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "NAME2",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "NAME2",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "STRAS",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "STRAS",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "PFACH",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "PFACH",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "PSTLZ",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "PSTLZ",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "ORT01",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "ORT01",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "EKORG",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "EKORG",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "VKORG",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "VKORG",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "CHAZV",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "CHAZV",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "KKOWK",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "KKOWK",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "KORDB",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "KORDB",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "BEDPL",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "BEDPL",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "LAND1",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "LAND1",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "REGIO",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "REGIO",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "COUNC",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "COUNC",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "CITYC",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "CITYC",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "ADRNR",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "ADRNR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "IWERK",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "IWERK",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "TXJCD",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "TXJCD",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "VTWEG",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "VTWEG",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "SPART",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "SPART",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "SPRAS",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "SPRAS",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "WKSOP",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "WKSOP",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "AWSLS",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "AWSLS",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "CHAZV_OLD",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "CHAZV_OLD",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "VLFKZ",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "VLFKZ",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "BZIRK",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "BZIRK",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "ZONE1",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "ZONE1",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "TAXIW",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "TAXIW",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "BZQHL",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "BZQHL",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "LET01",
+                  "type": "Decimal",
+                  "physicalType": "P"
+                },
+                "sink": {
+                  "name": "LET01",
+                  "type": "Decimal",
+                  "physicalType": "DECIMAL"
+                }
+              },
+              {
+                "source": {
+                  "name": "LET02",
+                  "type": "Decimal",
+                  "physicalType": "P"
+                },
+                "sink": {
+                  "name": "LET02",
+                  "type": "Decimal",
+                  "physicalType": "DECIMAL"
+                }
+              },
+              {
+                "source": {
+                  "name": "LET03",
+                  "type": "Decimal",
+                  "physicalType": "P"
+                },
+                "sink": {
+                  "name": "LET03",
+                  "type": "Decimal",
+                  "physicalType": "DECIMAL"
+                }
+              },
+              {
+                "source": {
+                  "name": "TXNAM_MA1",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "TXNAM_MA1",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "TXNAM_MA2",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "TXNAM_MA2",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "TXNAM_MA3",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "TXNAM_MA3",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "BETOL",
+                  "type": "String",
+                  "physicalType": "N"
+                },
+                "sink": {
+                  "name": "BETOL",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "J_1BBRANCH",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "J_1BBRANCH",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "VTBFI",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "VTBFI",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "FPRFW",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "FPRFW",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "ACHVM",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "ACHVM",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "DVSART",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "DVSART",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "NODETYPE",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "NODETYPE",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "NSCHEMA",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "NSCHEMA",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "PKOSA",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "PKOSA",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "MISCH",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "MISCH",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "MGVUPD",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "MGVUPD",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "VSTEL",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "VSTEL",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "MGVLAUPD",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "MGVLAUPD",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "MGVLAREVAL",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "MGVLAREVAL",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "SOURCING",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "SOURCING",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "OILIVAL",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "OILIVAL",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "OIHVTYPE",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "OIHVTYPE",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "OIHCREDIPI",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "OIHCREDIPI",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "STORETYPE",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "STORETYPE",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "DEP_STORE",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "DEP_STORE",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          }
+        },
+        "inputs": [
+          {
+            "referenceName": "dsSapTblGeneral",
+            "type": "DatasetReference",
+            "parameters": {
+              "sourceTableName": "/BIC/OHT001W"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "referenceName": "dsParqSapGeneral",
+            "type": "DatasetReference",
+            "parameters": {
+              "directoryName": "PTRO_STAGING/ADF/SAP/stg_SAPT001W",
+              "fileName": "OHSAPT001W.parquet",
+              "containerName": {
+                "value": "@pipeline().globalParameters.DataSourceLocation",
+                "type": "Expression"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "External Table T001W",
+        "type": "Script",
+        "dependsOn": [
+          {
+            "activity": "Copy data OHSAPT001W to ADLS",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "userProperties": [],
+        "linkedServiceName": {
+          "referenceName": "AzureSynapseAnalytics",
+          "type": "LinkedServiceReference"
+        },
+        "typeProperties": {
+          "scripts": [
+            {
+              "type": "Query",
+              "text": "IF EXISTS(SELECT * FROM sys.external_tables WHERE object_id = OBJECT_ID('dbo.SAPT001W_TMP')) \nBEGIN\n   DROP EXTERNAL TABLE dbo.SAPT001W_TMP;\nEND;\n \nCREATE EXTERNAL TABLE [dbo].[SAPT001W_TMP](\n\tWERKS_PLANT [nvarchar](4), \n\tNAME1_NAME1 [nvarchar](30), \n\tBWKEY_VALUATIONAREA [nvarchar](4), \n\tKUNNR_CUSTOMERNOPLANT [nvarchar](10), \n\tLIFNR_VENDNOPLANT [nvarchar](10), \n\tFABKL_FACTORYCALEND [nvarchar](2), \n\tNAME2_NAME2 [nvarchar](30), \n\tSTRAS_HOUSENOSTREET [nvarchar](30), \n\tPFACH_POBOX [nvarchar](10), \n\tPSTLZ_POSTALCODE [nvarchar](10), \n\tORT01_CITY [nvarchar](25), \n\tEKORG_PURCHASINGORG [nvarchar](4), \n\tVKORG_SALESORG [nvarchar](4), \n\tCHAZV_BATCHSTATMGMT [nvarchar](1), \n\tKKOWK_CONDPLNTLEVEL [nvarchar](1), \n\tKORDB_SOURCELIST [nvarchar](1), \n\tBEDPL_REQMTSPLANNING [nvarchar](1), \n\tLAND1_COUNTRY [nvarchar](3), \n\tREGIO_REGION [nvarchar](3), \n\tCOUNC_COUNTYCODE [nvarchar](3), \n\tCITYC_CITYCODE [nvarchar](4), \n\tADRNR_ADDRESS [nvarchar](10), \n\tIWERK_PLANNINGPLANT [nvarchar](4), \n\tTXJCD_TAXJUR [nvarchar](15), \n\tVTWEG_DISTRIBCHANNEL [nvarchar](2), \n\tSPART_DIVIV [nvarchar](2), \n\tSPRAS_LANGUAGE [nvarchar](1), \n\tWKSOP_SOPPLANT [nvarchar](1), \n\tAWSLS_VARIANCEKEY [nvarchar](6), \n\tCHAZV_OLD_BATCHSTATMGMT [nvarchar](1), \n\tVLFKZ_PLANTCAT [nvarchar](1), \n\tBZIRK_SALESDISTRICT [nvarchar](6), \n\tZONE1_SUPPLYREGION [nvarchar](10), \n\tTAXIW_TAXINDPLANT [nvarchar](1), \n\tBZQHL_REGULARVENDOR [nvarchar](1), \n\tLET01_1STREMEXPED [numeric](3, 0),\n\tLET02_2NDREMEXPED [numeric](3, 0),\n\tLET03_3RDREMEXPED [numeric](3, 0),\n\tTXNAM_MA1_TEXT1STDUNN [nvarchar](16), \n\tTXNAM_MA2_TEXT2NDDUNN [nvarchar](16), \n\tTXNAM_MA3_TEXT3RDDUNN [nvarchar](16), \n\tBETOL_POTOLERANCE [nvarchar](3), \n\tJ_1BBRANCH_BUSINESSPLACE [nvarchar](4), \n\tVTBFI_SALESAREADET [nvarchar](2), \n\tFPRFW_DISTRPROFILE [nvarchar](3), \n\tACHVM_ARCHIVINGFLAG [nvarchar](1), \n\tDVSART_DMSTYPE [nvarchar](1), \n\tNODETYPE_NODETYPESCN [nvarchar](3), \n\tNSCHEMA_NAMINGSTRUCT [nvarchar](4), \n\tPKOSA_COSTOBJECT [nvarchar](1), \n\tMISCH_MIXEDCOSTING [nvarchar](1), \n\tMGVUPD_ACTCOSTING [nvarchar](1), \n\tVSTEL_SHIPPINGPOINT [nvarchar](4), \n\tMGVLAUPD_ACTUALACTIVITIES [nvarchar](1), \n\tMGVLAREVAL_CCTRCREDITCONT [nvarchar](1), \n\tSOURCING_AFSDVIAATP [nvarchar](1), \n\tOILIVAL_EXGVALUATION [nvarchar](1), \n\tOIHVTYPE_VENDORTYPE [nvarchar](1), \n\tOIHCREDIPI_CREDIPI [nvarchar](1), \n\tSTORETYPE_STORECAT [nvarchar](1), \n\tDEP_STORE_SUPDS [nvarchar](4)\n)\nWITH (\n    LOCATION = 'PTRO_STAGING/ADF/SAP/stg_SAPT001W',\n    DATA_SOURCE = ExternalDataSourceDataLake,  \n    FILE_FORMAT = parquet_format\n)"
+            }
+          ],
+          "scriptBlockExecutionTimeout": "02:00:00"
+        }
+      },
+      {
+        "name": "Insert into Synapse T001W",
+        "type": "Script",
+        "dependsOn": [
+          {
+            "activity": "External Table T001W",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "userProperties": [],
+        "linkedServiceName": {
+          "referenceName": "AzureSynapseAnalytics",
+          "type": "LinkedServiceReference"
+        },
+        "typeProperties": {
+          "scripts": [
+            {
+              "type": "Query",
+              "text": "IF EXISTS(SELECT * FROM sys.external_tables WHERE object_id = OBJECT_ID('dbo.SAPT001W_TMP')) \nBEGIN\n\tTRUNCATE TABLE [dbo].[SAPT001W];\n\n\tINSERT INTO [dbo].[SAPT001W]\n\tSELECT \n\t\t*,\n\t\tleft(replace(replace(replace(CONVERT([nvarchar],dbo.fnConvertUtcToLocalTime(getdate()),(21)),'-',''),':',''),space((1)),''),(8))\n\tFROM [dbo].[SAPT001W_TMP]\nEND \n\nPRINT N'Data Inserted Successfully';"
+            }
+          ],
+          "scriptBlockExecutionTimeout": "02:00:00"
+        }
+      },
+      {
+        "name": "Copy data OHSAPANLZ to ADLS",
+        "description": "Extract table OHSAPANLZ to Data Lake for staging",
+        "type": "Copy",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.1:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "userProperties": [],
+        "typeProperties": {
+          "source": {
+            "type": "SapTableSource",
+            "customRfcReadTableFunctionModule": "",
+            "rfcTableFields": "",
+            "partitionOption": "None"
+          },
+          "sink": {
+            "type": "ParquetSink",
+            "storeSettings": {
+              "type": "AzureBlobFSWriteSettings"
+            },
+            "formatSettings": {
+              "type": "ParquetWriteSettings"
+            }
+          },
+          "enableStaging": false,
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "BUKRS",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "BUKRS",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "ANLN1",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "ANLN1",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "ANLN2",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "ANLN2",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "BDATU",
+                  "type": "String",
+                  "physicalType": "D"
+                },
+                "sink": {
+                  "name": "BDATU",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "ADATU",
+                  "type": "String",
+                  "physicalType": "D"
+                },
+                "sink": {
+                  "name": "ADATU",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "KOSTL",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "KOSTL",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "WERKS",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "WERKS",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "GSBER",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "GSBER",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "LSTAR",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "LSTAR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "MSFAK",
+                  "type": "Decimal",
+                  "physicalType": "P"
+                },
+                "sink": {
+                  "name": "MSFAK",
+                  "type": "Decimal",
+                  "physicalType": "DECIMAL"
+                }
+              },
+              {
+                "source": {
+                  "name": "XSTIL",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "XSTIL",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "STORT",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "STORT",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "CAUFN",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "CAUFN",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "PLAN1",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "PLAN1",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "PLAN2",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "PLAN2",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "RAUMN",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "RAUMN",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "IAUFN",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "IAUFN",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "IPROJ",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "IPROJ",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "TPLKZ",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "TPLKZ",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "TPLNR",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "TPLNR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "ANUPD",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "ANUPD",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "TXJCD",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "TXJCD",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "IPSNR",
+                  "type": "String",
+                  "physicalType": "N"
+                },
+                "sink": {
+                  "name": "IPSNR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "KFZKZ",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "KFZKZ",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "PERNR",
+                  "type": "String",
+                  "physicalType": "N"
+                },
+                "sink": {
+                  "name": "PERNR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "KOSTLV",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "KOSTLV",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "FISTL",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "FISTL",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "GEBER",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "GEBER",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "FKBER",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "FKBER",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "GRANT_NBR",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "GRANT_NBR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "GEBER2",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "GEBER2",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "FKBER2",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "FKBER2",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "GRANT_NBR2",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "GRANT_NBR2",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "FISTL2",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "FISTL2",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "IMKEY",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "IMKEY",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "PS_PSP_PNR2",
+                  "type": "String",
+                  "physicalType": "N"
+                },
+                "sink": {
+                  "name": "PS_PSP_PNR2",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "BUDGET_PD",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "BUDGET_PD",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "BUDGET_PD2",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "BUDGET_PD2",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "SEGMENT",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "SEGMENT",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "PRCTR",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "PRCTR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          }
+        },
+        "inputs": [
+          {
+            "referenceName": "dsSapTblGeneral",
+            "type": "DatasetReference",
+            "parameters": {
+              "sourceTableName": "/BIC/OHANLZ"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "referenceName": "dsParqSapGeneral",
+            "type": "DatasetReference",
+            "parameters": {
+              "directoryName": "PTRO_STAGING/ADF/SAP/stg_SAPANLZ",
+              "fileName": "OHSAPANLZ.parquet",
+              "containerName": {
+                "value": "@pipeline().globalParameters.DataSourceLocation",
+                "type": "Expression"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "External Table ANLZ",
+        "type": "Script",
+        "dependsOn": [
+          {
+            "activity": "Copy data OHSAPANLZ to ADLS",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "userProperties": [],
+        "linkedServiceName": {
+          "referenceName": "AzureSynapseAnalytics",
+          "type": "LinkedServiceReference"
+        },
+        "typeProperties": {
+          "scripts": [
+            {
+              "type": "Query",
+              "text": "IF EXISTS(SELECT * FROM sys.external_tables WHERE object_id = OBJECT_ID('dbo.SAPANLZ_TMP')) \nBEGIN\n   DROP EXTERNAL TABLE dbo.SAPANLZ_TMP;\nEND;\n \nCREATE EXTERNAL TABLE [dbo].[SAPANLZ_TMP](\n\tBUKRS_COMPANYCODE [nvarchar](4) NOT NULL,\n\tANLN1_ASSET [nvarchar](12) NOT NULL,\n\tANLN2_SUBNUMBER [nvarchar](4) NOT NULL,\n\tBDATU_VALIDTO [nvarchar](8) NOT NULL,\n\tADATU_VALIDFROM [nvarchar](8) NULL, \n\tKOSTL_COSTCENTER [nvarchar](10) NULL, \n\tWERKS_PLANT [nvarchar](4) NULL, \n\tGSBER_BUSINESSAREA [nvarchar](4) NULL, \n\tLSTAR_ACTIVITYTYPE [nvarchar](6) NULL, \n\tMSFAK_SHIFTFACTOR [numeric](3, 2) NULL,\n\tXSTIL_SHUTDOWN [nvarchar](1) NULL, \n\tSTORT_LOCATION [nvarchar](10) NULL, \n\tCAUFN_INTORDER [nvarchar](12) NULL, \n\tPLAN1_NOLONGERUSED [nvarchar](12) NULL, \n\tPLAN2_NOLONGERUSED [nvarchar](4) NULL, \n\tRAUMN_ROOM [nvarchar](8) NULL, \n\tIAUFN_MAINTNCEORDER [nvarchar](12) NULL, \n\tIPROJ_NOTINUSE [nvarchar](16) NULL, \n\tTPLKZ_UNUSEDFIELDLENGTH [nvarchar](3) NULL, \n\tTPLNR_FUNCTIONALLOC [nvarchar](30) NULL, \n\tANUPD_CHANGETYPE [nvarchar](1) NULL, \n\tTXJCD_TAXJUR [nvarchar](15) NULL, \n\tIPSNR_WBSELEMENTMAINT [nvarchar](8) NULL, \n\tKFZKZ_LICENSEPLATENUMBER [nvarchar](15) NULL, \n\tPERNR_PERSONNELNO [nvarchar](8) NULL, \n\tKOSTLV_RESPCOSTCTR [nvarchar](10) NULL, \n\tFISTL_FUNDSCENTER [nvarchar](16) NULL, \n\tGEBER_FUND [nvarchar](10) NULL, \n\tFKBER_FUNCTIONALAREA [nvarchar](16) NULL, \n\tGRANT_NBR_GRANT [nvarchar](20) NULL, \n\tGEBER2_FUND [nvarchar](10) NULL, \n\tFKBER2_FUNCTIONALAREA [nvarchar](16) NULL, \n\tGRANT_NBR2_GRANT [nvarchar](20) NULL, \n\tFISTL2_FUNDSCENTER [nvarchar](16) NULL, \n\tIMKEY_REALESTATEKEY [nvarchar](8) NULL, \n\tPS_PSP_PNR2_WBSELEMENT [nvarchar](8) NULL, \n\tBUDGET_PD_BUDGETPERIOD [nvarchar](10) NULL, \n\tBUDGET_PD2_BUDGETPERIOD [nvarchar](10) NULL, \n\tSEGMENT_SEGMENT [nvarchar](10) NULL, \n\tPRCTR_PROFITCENTER [nvarchar](10) NULL\n)\nWITH (\n    LOCATION = 'PTRO_STAGING/ADF/SAP/stg_SAPANLZ',\n    DATA_SOURCE = ExternalDataSourceDataLake,  \n    FILE_FORMAT = parquet_format\n)"
+            }
+          ],
+          "scriptBlockExecutionTimeout": "02:00:00"
+        }
+      },
+      {
+        "name": "Insert into Synapse ANLZ",
+        "type": "Script",
+        "dependsOn": [
+          {
+            "activity": "External Table ANLZ",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "userProperties": [],
+        "linkedServiceName": {
+          "referenceName": "AzureSynapseAnalytics",
+          "type": "LinkedServiceReference"
+        },
+        "typeProperties": {
+          "scripts": [
+            {
+              "type": "Query",
+              "text": "IF EXISTS(SELECT * FROM sys.external_tables WHERE object_id = OBJECT_ID('dbo.SAPANLZ_TMP')) \nBEGIN\n\tTRUNCATE TABLE [dbo].[SAPANLZ];\n\n\tINSERT INTO [dbo].[SAPANLZ]\n\t\tSELECT \n\t\t\tCOALESCE(BUKRS_COMPANYCODE,'')\n\t\t\t,COALESCE(ANLN1_ASSET,'')\n\t\t\t,COALESCE(ANLN2_SUBNUMBER,'')\n\t\t\t,COALESCE(BDATU_VALIDTO,'')\n\t\t\t,COALESCE(ADATU_VALIDFROM,'')\n\t\t\t,COALESCE(KOSTL_COSTCENTER,'')\n\t\t\t,COALESCE(WERKS_PLANT,'')\n\t\t\t,COALESCE(GSBER_BUSINESSAREA,'')\n\t\t\t,COALESCE(LSTAR_ACTIVITYTYPE,'')\n\t\t\t,COALESCE(MSFAK_SHIFTFACTOR,'')\n\t\t\t,COALESCE(XSTIL_SHUTDOWN,'')\n\t\t\t,COALESCE(STORT_LOCATION,'')\n\t\t\t,COALESCE(CAUFN_INTORDER,'')\n\t\t\t,COALESCE(PLAN1_NOLONGERUSED,'')\n\t\t\t,COALESCE(PLAN2_NOLONGERUSED,'')\n\t\t\t,COALESCE(RAUMN_ROOM,'')\n\t\t\t,COALESCE(IAUFN_MAINTNCEORDER,'')\n\t\t\t,COALESCE(IPROJ_NOTINUSE,'')\n\t\t\t,COALESCE(TPLKZ_UNUSEDFIELDLENGTH,'')\n\t\t\t,COALESCE(TPLNR_FUNCTIONALLOC,'')\n\t\t\t,COALESCE(ANUPD_CHANGETYPE,'')\n\t\t\t,COALESCE(TXJCD_TAXJUR,'')\n\t\t\t,COALESCE(IPSNR_WBSELEMENTMAINT,'')\n\t\t\t,COALESCE(KFZKZ_LICENSEPLATENUMBER,'')\n\t\t\t,COALESCE(PERNR_PERSONNELNO,'')\n\t\t\t,COALESCE(KOSTLV_RESPCOSTCTR,'')\n\t\t\t,COALESCE(FISTL_FUNDSCENTER,'')\n\t\t\t,COALESCE(GEBER_FUND,'')\n\t\t\t,COALESCE(FKBER_FUNCTIONALAREA,'')\n\t\t\t,COALESCE(GRANT_NBR_GRANT,'')\n\t\t\t,COALESCE(GEBER2_FUND,'')\n\t\t\t,COALESCE(FKBER2_FUNCTIONALAREA,'')\n\t\t\t,COALESCE(GRANT_NBR2_GRANT,'')\n\t\t\t,COALESCE(FISTL2_FUNDSCENTER,'')\n\t\t\t,COALESCE(IMKEY_REALESTATEKEY,'')\n\t\t\t,COALESCE(PS_PSP_PNR2_WBSELEMENT,'')\n\t\t\t,COALESCE(BUDGET_PD_BUDGETPERIOD,'')\n\t\t\t,COALESCE(BUDGET_PD2_BUDGETPERIOD,'')\n\t\t\t,COALESCE(SEGMENT_SEGMENT,'')\n\t\t\t,COALESCE(PRCTR_PROFITCENTER,'')\n\t\t\t,left(replace(replace(replace(CONVERT([nvarchar],dbo.fnConvertUtcToLocalTime(getdate()),(21)),'-',''),':',''),space((1)),''),(8))\n\tFROM [dbo].[SAPANLZ_TMP]\nEND \n\nPRINT N'Data Inserted Successfully';"
+            }
+          ],
+          "scriptBlockExecutionTimeout": "02:00:00"
+        }
+      },
+      {
+        "name": "Copy data OHSAPEQUIPACT to ADLS",
+        "description": "Extract table OHSAPEQUIPACT to Data Lake for staging",
+        "type": "Copy",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.1:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "userProperties": [],
+        "typeProperties": {
+          "source": {
+            "type": "SapTableSource",
+            "customRfcReadTableFunctionModule": "",
+            "rfcTableFields": "",
+            "partitionOption": "None"
+          },
+          "sink": {
+            "type": "ParquetSink",
+            "storeSettings": {
+              "type": "AzureBlobFSWriteSettings"
+            },
+            "formatSettings": {
+              "type": "ParquetWriteSettings"
+            }
+          },
+          "enableStaging": false,
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "REQTSN",
+                  "type": "String",
+                  "physicalType": "N"
+                },
+                "sink": {
+                  "name": "REQTSN",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "DATAPAKID",
+                  "type": "Int32",
+                  "physicalType": "I"
+                },
+                "sink": {
+                  "name": "DATAPAKID",
+                  "type": "Int32",
+                  "physicalType": "INT_32"
+                }
+              },
+              {
+                "source": {
+                  "name": "RECORD",
+                  "type": "Int32",
+                  "physicalType": "I"
+                },
+                "sink": {
+                  "name": "RECORD",
+                  "type": "Int32",
+                  "physicalType": "INT_32"
+                }
+              },
+              {
+                "source": {
+                  "name": "TPLNR",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "TPLNR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "ACTCD",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "ACTCD",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "EQKTX",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "EQKTX",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "WRACT",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "WRACT",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "WERKS",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "WERKS",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "WERNM",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "WERNM",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "MATNR",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "MATNR",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "MODEL",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "MODEL",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "MANUFC",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "MANUFC",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "SIZES",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "SIZES",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "FDATE",
+                  "type": "String",
+                  "physicalType": "D"
+                },
+                "sink": {
+                  "name": "FDATE",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "TDATE",
+                  "type": "String",
+                  "physicalType": "D"
+                },
+                "sink": {
+                  "name": "TDATE",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "UCREA",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "UCREA",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "DCREA",
+                  "type": "String",
+                  "physicalType": "D"
+                },
+                "sink": {
+                  "name": "DCREA",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "UUPDA",
+                  "type": "String",
+                  "physicalType": "C"
+                },
+                "sink": {
+                  "name": "UUPDA",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              },
+              {
+                "source": {
+                  "name": "DUPDA",
+                  "type": "String",
+                  "physicalType": "D"
+                },
+                "sink": {
+                  "name": "DUPDA",
+                  "type": "String",
+                  "physicalType": "UTF8"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          }
+        },
+        "inputs": [
+          {
+            "referenceName": "dsSapTblGeneral",
+            "type": "DatasetReference",
+            "parameters": {
+              "sourceTableName": "/BIC/OHEQUIPACT"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "referenceName": "dsParqSapGeneral",
+            "type": "DatasetReference",
+            "parameters": {
+              "directoryName": "PTRO_STAGING/ADF/SAP/stg_SAPEQUIPACT",
+              "fileName": "OHSAPEQUIPACT.parquet",
+              "containerName": {
+                "value": "@pipeline().globalParameters.DataSourceLocation",
+                "type": "Expression"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "External Table EQUIPACT",
+        "type": "Script",
+        "dependsOn": [
+          {
+            "activity": "Copy data OHSAPEQUIPACT to ADLS",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "userProperties": [],
+        "linkedServiceName": {
+          "referenceName": "AzureSynapseAnalytics",
+          "type": "LinkedServiceReference"
+        },
+        "typeProperties": {
+          "scripts": [
+            {
+              "type": "Query",
+              "text": "IF EXISTS(SELECT * FROM sys.external_tables WHERE object_id = OBJECT_ID('dbo.SAPEQUIPACT_TMP')) \nBEGIN\n   DROP EXTERNAL TABLE dbo.SAPEQUIPACT_TMP;\nEND;\n \nCREATE EXTERNAL TABLE [dbo].[SAPEQUIPACT_TMP](\n\tTPLNR nvarchar(60) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,\n\tACTCD nvarchar(4) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,\n\tEQKTX nvarchar(100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,\n\tWRACT nvarchar(100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,\n\tWERKS nvarchar(8) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,\n\tWERNM nvarchar(60) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,\n\tMATNR nvarchar(60) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,\n\tMODEL nvarchar(60) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,\n\tMANUFC nvarchar(60) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,\n\tSIZES nvarchar(60) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,\n\tFDATE nvarchar(16) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,\n\tTDATE nvarchar(16) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,\n\tUCREA nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,\n\tDCREA nvarchar(16) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,\n\tUUPDA nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,\n\tDUPDA nvarchar(16) COLLATE SQL_Latin1_General_CP1_CI_AS NULL\n)\nWITH (\n    LOCATION = 'PTRO_STAGING/ADF/SAP/stg_SAPEQUIPACT',\n    DATA_SOURCE = ExternalDataSourceDataLake,  \n    FILE_FORMAT = parquet_format\n)"
+            }
+          ],
+          "scriptBlockExecutionTimeout": "02:00:00"
+        }
+      },
+      {
+        "name": "Insert into Synapse EQUIPACT",
+        "type": "Script",
+        "dependsOn": [
+          {
+            "activity": "External Table EQUIPACT",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "userProperties": [],
+        "linkedServiceName": {
+          "referenceName": "AzureSynapseAnalytics",
+          "type": "LinkedServiceReference"
+        },
+        "typeProperties": {
+          "scripts": [
+            {
+              "type": "Query",
+              "text": "IF EXISTS(SELECT * FROM sys.external_tables WHERE object_id = OBJECT_ID('dbo.SAPEQUIPACT_TMP')) \nBEGIN\n\tTRUNCATE TABLE [dbo].[SAPEQUIPACT];\n\n\tINSERT INTO [dbo].[SAPEQUIPACT]\n\t\tSELECT \n\t\t\tCOALESCE(TPLNR,'')\n\t\t\t,COALESCE(ACTCD,'')\n\t\t\t,COALESCE(EQKTX,'')\n\t\t\t,COALESCE(WRACT,'')\n\t\t\t,COALESCE(WERKS,'')\n\t\t\t,COALESCE(WERNM,'')\n\t\t\t,COALESCE(MATNR,'')\n\t\t\t,COALESCE(MODEL,'')\n\t\t\t,COALESCE(MANUFC,'')\n\t\t\t,COALESCE(SIZES,'')\n\t\t\t,COALESCE(FDATE,'')\n\t\t\t,COALESCE(TDATE,'')\n\t\t\t,COALESCE(UCREA,'')\n\t\t\t,COALESCE(DCREA,'')\n\t\t\t,COALESCE(UUPDA,'')\n\t\t\t,COALESCE(DUPDA,'')\n\t\t\t,left(replace(replace(replace(CONVERT([nvarchar],dbo.fnConvertUtcToLocalTime(getdate()),(21)),'-',''),':',''),space((1)),''),(8))\n\tFROM [dbo].[SAPEQUIPACT_TMP]\nEND \n\nPRINT N'Data Inserted Successfully';"
+            }
+          ],
+          "scriptBlockExecutionTimeout": "02:00:00"
+        }
+      },
+      {
+        "name": "Log Copy 1",
+        "type": "ExecutePipeline",
+        "dependsOn": [
+          {
+            "activity": "Copy data OHSAPPROJ to ADLS",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          }
+        ],
+        "policy": {
+          "secureInput": false
+        },
+        "userProperties": [],
+        "typeProperties": {
+          "pipeline": {
+            "referenceName": "LoggingPipeline",
+            "type": "PipelineReference"
+          },
+          "waitOnCompletion": true,
+          "parameters": {
+            "SourceTable": "/BIC/OHPROJ",
+            "TargetTable": "",
+            "UpdatedBy": {
+              "value": "@pipeline().Pipeline",
+              "type": "Expression"
+            },
+            "ActivityResult": {
+              "value": "@activity('Copy data OHSAPPROJ to ADLS')",
+              "type": "Expression"
+            },
+            "ProcessName": "Copy data OHSAPPROJ to ADLS"
+          }
+        }
+      },
+      {
+        "name": "Log Copy 2",
+        "type": "ExecutePipeline",
+        "dependsOn": [
+          {
+            "activity": "Copy data OHSAPPRPS to ADLS",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          }
+        ],
+        "policy": {
+          "secureInput": false
+        },
+        "userProperties": [],
+        "typeProperties": {
+          "pipeline": {
+            "referenceName": "LoggingPipeline",
+            "type": "PipelineReference"
+          },
+          "waitOnCompletion": true,
+          "parameters": {
+            "SourceTable": "/BIC/OHPRPS",
+            "TargetTable": "",
+            "UpdatedBy": {
+              "value": "@pipeline().Pipeline",
+              "type": "Expression"
+            },
+            "ActivityResult": {
+              "value": "@activity('Copy data OHSAPPRPS to ADLS')",
+              "type": "Expression"
+            },
+            "ProcessName": "Copy data OHSAPPRPS to ADLS"
+          }
+        }
+      },
+      {
+        "name": "Log Copy 3",
+        "type": "ExecutePipeline",
+        "dependsOn": [
+          {
+            "activity": "Copy data OHSAPTCURR to ADLS",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          }
+        ],
+        "policy": {
+          "secureInput": false
+        },
+        "userProperties": [],
+        "typeProperties": {
+          "pipeline": {
+            "referenceName": "LoggingPipeline",
+            "type": "PipelineReference"
+          },
+          "waitOnCompletion": true,
+          "parameters": {
+            "SourceTable": "/BIC/OHTCURR",
+            "TargetTable": "",
+            "UpdatedBy": {
+              "value": "@pipeline().Pipeline",
+              "type": "Expression"
+            },
+            "ActivityResult": {
+              "value": "@activity('Copy data OHSAPTCURR to ADLS')",
+              "type": "Expression"
+            },
+            "ProcessName": "Copy data OHSAPTCURR to ADLS"
+          }
+        }
+      },
+      {
+        "name": "Log Copy 4",
+        "type": "ExecutePipeline",
+        "dependsOn": [
+          {
+            "activity": "Copy data OHSAPSKAT to ADLS",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          }
+        ],
+        "policy": {
+          "secureInput": false
+        },
+        "userProperties": [],
+        "typeProperties": {
+          "pipeline": {
+            "referenceName": "LoggingPipeline",
+            "type": "PipelineReference"
+          },
+          "waitOnCompletion": true,
+          "parameters": {
+            "SourceTable": "/BIC/OHSKAT",
+            "TargetTable": "",
+            "UpdatedBy": {
+              "value": "@pipeline().Pipeline",
+              "type": "Expression"
+            },
+            "ActivityResult": {
+              "value": "@activity('Copy data OHSAPSKAT to ADLS')",
+              "type": "Expression"
+            },
+            "ProcessName": "Copy data OHSAPSKAT to ADLS"
+          }
+        }
+      },
+      {
+        "name": "Log Copy 5",
+        "type": "ExecutePipeline",
+        "dependsOn": [
+          {
+            "activity": "Copy data OHSAPT001W to ADLS",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          }
+        ],
+        "policy": {
+          "secureInput": false
+        },
+        "userProperties": [],
+        "typeProperties": {
+          "pipeline": {
+            "referenceName": "LoggingPipeline",
+            "type": "PipelineReference"
+          },
+          "waitOnCompletion": true,
+          "parameters": {
+            "SourceTable": "/BIC/OHT001W",
+            "TargetTable": "",
+            "UpdatedBy": {
+              "value": "@pipeline().Pipeline",
+              "type": "Expression"
+            },
+            "ActivityResult": {
+              "value": "@activity('Copy data OHSAPT001W to ADLS')",
+              "type": "Expression"
+            },
+            "ProcessName": "Copy data OHSAPT001W to ADLS"
+          }
+        }
+      },
+      {
+        "name": "Log Copy 6",
+        "type": "ExecutePipeline",
+        "dependsOn": [
+          {
+            "activity": "Copy data OHSAPANLZ to ADLS",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          }
+        ],
+        "policy": {
+          "secureInput": false
+        },
+        "userProperties": [],
+        "typeProperties": {
+          "pipeline": {
+            "referenceName": "LoggingPipeline",
+            "type": "PipelineReference"
+          },
+          "waitOnCompletion": true,
+          "parameters": {
+            "SourceTable": "/BIC/OHANLZ",
+            "TargetTable": "",
+            "UpdatedBy": {
+              "value": "@pipeline().Pipeline",
+              "type": "Expression"
+            },
+            "ActivityResult": {
+              "value": "@activity('Copy data OHSAPANLZ to ADLS')",
+              "type": "Expression"
+            },
+            "ProcessName": "Copy data OHSAPANLZ to ADLS"
+          }
+        }
+      },
+      {
+        "name": "Log Copy 7",
+        "type": "ExecutePipeline",
+        "dependsOn": [
+          {
+            "activity": "Copy data OHSAPEQUIPACT to ADLS",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          }
+        ],
+        "policy": {
+          "secureInput": false
+        },
+        "userProperties": [],
+        "typeProperties": {
+          "pipeline": {
+            "referenceName": "LoggingPipeline",
+            "type": "PipelineReference"
+          },
+          "waitOnCompletion": true,
+          "parameters": {
+            "SourceTable": "/BIC/OHEQUIPACT",
+            "TargetTable": "",
+            "UpdatedBy": {
+              "value": "@pipeline().Pipeline",
+              "type": "Expression"
+            },
+            "ActivityResult": {
+              "value": "@activity('Copy data OHSAPEQUIPACT to ADLS')",
+              "type": "Expression"
+            },
+            "ProcessName": "Copy data OHSAPEQUIPACT to ADLS"
+          }
+        }
+      }
+    ],
+    "folder": {
+      "name": "PTRO_DW/STAGING/SAP"
+    },
+    "annotations": []
+  }
+}
