@@ -4938,7 +4938,7 @@
           "waitOnCompletion": true,
           "parameters": {
             "SourceTable": "/BIC/OHPROJ",
-            "TargetTable": "",
+            "TargetTable": "stg_SAPPROJ",
             "UpdatedBy": {
               "value": "@pipeline().Pipeline",
               "type": "Expression"
@@ -4947,7 +4947,8 @@
               "value": "@activity('Copy data OHSAPPROJ to ADLS')",
               "type": "Expression"
             },
-            "ProcessName": "Copy data OHSAPPROJ to ADLS"
+            "ProcessName": "Copy data OHSAPPROJ to ADLS",
+            "SourceName": "BW"
           }
         }
       },
@@ -4974,7 +4975,7 @@
           "waitOnCompletion": true,
           "parameters": {
             "SourceTable": "/BIC/OHPRPS",
-            "TargetTable": "",
+            "TargetTable": "stg_SAPPRPS",
             "UpdatedBy": {
               "value": "@pipeline().Pipeline",
               "type": "Expression"
@@ -4983,7 +4984,8 @@
               "value": "@activity('Copy data OHSAPPRPS to ADLS')",
               "type": "Expression"
             },
-            "ProcessName": "Copy data OHSAPPRPS to ADLS"
+            "ProcessName": "Copy data OHSAPPRPS to ADLS",
+            "SourceName": "BW"
           }
         }
       },
@@ -5010,7 +5012,7 @@
           "waitOnCompletion": true,
           "parameters": {
             "SourceTable": "/BIC/OHTCURR",
-            "TargetTable": "",
+            "TargetTable": "stg_SAPTCURR",
             "UpdatedBy": {
               "value": "@pipeline().Pipeline",
               "type": "Expression"
@@ -5019,7 +5021,8 @@
               "value": "@activity('Copy data OHSAPTCURR to ADLS')",
               "type": "Expression"
             },
-            "ProcessName": "Copy data OHSAPTCURR to ADLS"
+            "ProcessName": "Copy data OHSAPTCURR to ADLS",
+            "SourceName": "BW"
           }
         }
       },
@@ -5046,7 +5049,7 @@
           "waitOnCompletion": true,
           "parameters": {
             "SourceTable": "/BIC/OHSKAT",
-            "TargetTable": "",
+            "TargetTable": "stg_SAPSKAT",
             "UpdatedBy": {
               "value": "@pipeline().Pipeline",
               "type": "Expression"
@@ -5055,7 +5058,8 @@
               "value": "@activity('Copy data OHSAPSKAT to ADLS')",
               "type": "Expression"
             },
-            "ProcessName": "Copy data OHSAPSKAT to ADLS"
+            "ProcessName": "Copy data OHSAPSKAT to ADLS",
+            "SourceName": "BW"
           }
         }
       },
@@ -5082,7 +5086,7 @@
           "waitOnCompletion": true,
           "parameters": {
             "SourceTable": "/BIC/OHT001W",
-            "TargetTable": "",
+            "TargetTable": "stg_SAPT001W",
             "UpdatedBy": {
               "value": "@pipeline().Pipeline",
               "type": "Expression"
@@ -5091,7 +5095,8 @@
               "value": "@activity('Copy data OHSAPT001W to ADLS')",
               "type": "Expression"
             },
-            "ProcessName": "Copy data OHSAPT001W to ADLS"
+            "ProcessName": "Copy data OHSAPT001W to ADLS",
+            "SourceName": "BW"
           }
         }
       },
@@ -5118,7 +5123,7 @@
           "waitOnCompletion": true,
           "parameters": {
             "SourceTable": "/BIC/OHANLZ",
-            "TargetTable": "",
+            "TargetTable": "stg_SAPANLZ",
             "UpdatedBy": {
               "value": "@pipeline().Pipeline",
               "type": "Expression"
@@ -5127,7 +5132,8 @@
               "value": "@activity('Copy data OHSAPANLZ to ADLS')",
               "type": "Expression"
             },
-            "ProcessName": "Copy data OHSAPANLZ to ADLS"
+            "ProcessName": "Copy data OHSAPANLZ to ADLS",
+            "SourceName": "BW"
           }
         }
       },
@@ -5154,7 +5160,7 @@
           "waitOnCompletion": true,
           "parameters": {
             "SourceTable": "/BIC/OHEQUIPACT",
-            "TargetTable": "",
+            "TargetTable": "stg_SAPEQUIPACT",
             "UpdatedBy": {
               "value": "@pipeline().Pipeline",
               "type": "Expression"
@@ -5163,7 +5169,8 @@
               "value": "@activity('Copy data OHSAPEQUIPACT to ADLS')",
               "type": "Expression"
             },
-            "ProcessName": "Copy data OHSAPEQUIPACT to ADLS"
+            "ProcessName": "Copy data OHSAPEQUIPACT to ADLS",
+            "SourceName": "BW"
           }
         }
       }
