@@ -82,6 +82,7 @@ function saveJson(jsonObject, fileName) {
 }
 
 function updatePipeline(fileName) {
+    detailPipeline(fileName);
     let pipeline = loadJson(fileName)
     let activities = pipeline.properties.activities;
     let newActivitiesCount = 0;
@@ -100,7 +101,6 @@ function updatePipeline(fileName) {
     for (let i = 0; i < copyActivities.length; i++) {
         let copyActivity = copyActivities[i];
         if (skipCopyActivities.includes(copyActivity.name)) continue;
-        console.log(i)
         let newActivity = createLogActivity_Copy(copyActivity, i + 1);
         activities.push(newActivity);
         newActivitiesCount++;
@@ -111,11 +111,12 @@ function updatePipeline(fileName) {
     saveJson(pipeline, fileName);
 }
 
-function maxActivities() {
+function detailPipeline(fileName) {
     let jsonFiles = getListJsonFiles('pipeline')
     let arr = []
     jsonFiles.forEach(file => {
         const pipeline = loadJson(file)
+        if(fileName && pipeline.name !== fileName) return
         let totalCopy = 0;
 
         let activities = pipeline.properties?.activities;
@@ -135,5 +136,5 @@ function maxActivities() {
     console.table(arr)
 }
 
-// updatePipeline("SAPAUFKPER");
-// maxActivities();
+// updatePipeline("DailyMasterData02");
+detailPipeline();
