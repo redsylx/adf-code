@@ -1,0 +1,16 @@
+{
+    "Id": 175,
+    "ProcessBatch": "20240530",
+    "SourceName": "SapTable",
+    "SourceTable": "/BIC/OHAUFKPER",
+    "SourceRecords": 0,
+    "TargetTable": "SAPAUFK",
+    "InsertedRecords": 0,
+    "ProcessStart": "2024-05-30T10:54:28.597Z",
+    "ProcessEnd": "2024-05-30T10:54:42.597Z",
+    "Duration": 14,
+    "Status": "Successfully",
+    "ErrorMessage": "Successfully Copy data OHAUFKPER to ADLS",
+    "UpdateDate": "2024-05-30T10:54:48.39Z",
+    "UpdatedBy": "SAPAUFKPER_copy1"
+}
