@@ -96,8 +96,9 @@ function saveJson(jsonObject, fileName) {
 }
 
 function updatePipeline(fileName) {
-    detailPipeline(fileName);
+    // detailPipeline(fileName);
     let pipeline = loadJson(fileName)
+    if(!pipeline) throw Error("asd");
     let activities = pipeline.properties.activities;
     let newActivitiesCount = 0;
 
@@ -118,8 +119,8 @@ function updatePipeline(fileName) {
         let newActivity = createLogActivity_Copy(copyActivity, i + 1);
         NEW_LOG_ACTIVITIES.push(
             {
-                activity_name: copyActivity.name,
-                log_name: newActivity.name,
+                // activity_name: copyActivity.name,
+                // log_name: newActivity.name,
                 param_source_table: newActivity.typeProperties.parameters.SourceTable,
                 param_target_table: newActivity.typeProperties.parameters.TargetTable,
                 param_source_name: newActivity.typeProperties.parameters.SourceName,
@@ -129,12 +130,9 @@ function updatePipeline(fileName) {
         newActivitiesCount++;
     }
 
-    console.table(NEW_LOG_ACTIVITIES);
     console.log("log added :", newActivitiesCount);
     if(!newActivitiesCount) return;
     saveJson(pipeline, fileName);
-
-    NEW_LOG_ACTIVITIES = [];
 }
 
 function detailPipeline(fileName) {
@@ -162,5 +160,55 @@ function detailPipeline(fileName) {
     console.table(arr)
 }
 
-updatePipeline("DailyMasterData02");
+let excel_pipelines = [
+    "SAPProductionUploadPER",
+    "DailyMasterData02",
+    "SAPAUFKPER",
+    "DailyMasterData01",
+    "SAPCOMPLIFE",
+    "SAPCOVPPER",
+    "SAPEBAN_EINE",
+    "SAPEKBEPER",
+    "SAPEKET_EREV",
+    "SAPEQUIPACT",
+    "SAPIFLO_SAPIFLOT",
+    "SAPJCDSPER",
+    "WeeklyMasterData",
+    "SAPMKPFPER",
+    "SAPMSEGPER",
+    "SAPPMRFCST",
+    "SAPRKWA",
+    "SAPVIAUKSPER",
+    "SAPVIQMELPER",
+    "SAPZASSREGPER",
+    "SAPZASTEQUIPER",
+    "SAPZIK17PER",
+    "SAPZMIMTTDESPER",
+    "SAPZMIMVRESB",
+    "SAPZSERVACC"
+]
+
+let not_in_excel_pipelines = [
+    "SAPBSAKPER",
+    "SAPBSASPER",
+    "SAPBSIKPER",
+    "SAPCDPOSPRPOPER",
+    "SAPEKKO_SAPEKPO",
+    "SAPFIGLPER",
+    "SAPJSTO_SAPJCDSPER"
+]
+
+let not_found_pipelines = []
+
+for(let pipeline of excel_pipelines) {
+    try {
+        updatePipeline(pipeline);
+    } catch (Error) {
+        not_found_pipelines.push(pipeline);
+    }
+}
+
+console.table(NEW_LOG_ACTIVITIES);
+console.table(not_found_pipelines);
+
 // detailPipeline();
